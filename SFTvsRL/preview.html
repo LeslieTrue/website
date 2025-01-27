@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>SFT Memorizes, RL Generalizes</title>
+        <link rel="icon" type="image/x-icon" href="./assets/plot_icon.svg">
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Open Graph -->
+        <meta property="og:url" content="https://tianzhechu.com/SFTvsRL/" />
+        <meta property="og:image" content="https://cambrian-mllm.github.io/static/img/preview.png" />
+        <meta property="og:title" content="SFT Memorizes, RL Generalizes" />
+        <meta property="og:description" content="SFT Memorizes, RL Generalizes: A Comparative Study of Foundation Model Post-training" />
+        
+        <!-- Twitter -->
+        <meta name="twitter:url" content="https://tianzhechu.com/SFTvsRL/" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:image" content="https://cambrian-mllm.github.io/static/img/preview.png" />
+        <meta name="twitter:title" content="SFT Memorizes, RL Generalizes" />
+        <meta name="twitter:description" content="SFT Memorizes, RL Generalizes: A Comparative Study of Foundation Model Post-training" />
+
+        <script src="./static/js/distill_template.v2.js"></script>
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+        <script src="https://d3js.org/d3.v5.min.js"></script>
+        <script src="https://d3js.org/d3-collection.v1.min.js"></script>
+        <script src="https://rawgit.com/nstrayer/slid3r/master/dist/slid3r.js"></script>
+
+        <script defer="" src="./static/js/hider.js"></script>
+        <script src="./static/js/image_interact.js"></script>
+        <script src="./static/js/switch_videos.js"></script>
+
+        <link rel="stylesheet" href="./static/css/style.css">
+        <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+        
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.css" integrity="sha384-yFRtMMDnQtDRO8rLpMIKrtPCD5jdktao2TV19YiZYWMDkUR5GQZR/NOVTdquEx1j" crossorigin="anonymous">
+        <script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.js" integrity="sha384-9Nhn55MVVN0/4OFx7EE5kpFBPsEMZxKTCnA+4fqDmg12eCTqGi6+BB2LjY8brQxJ" crossorigin="anonymous"></script>
+        <script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous"
+            onload="renderMathInElement(document.body);"></script>
+        <script defer src="./static/js/fontawesome.all.min.js"></script>
+
+        <!-- medium zoom https://github.com/francoischalifour/medium-zoom -->
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>  <!-- jquery -->
+        <script defer src="./static/js/medium-zoom.min.js"></script>
+        <script defer src="./static/js/zoom.js"></script>
+    </head>
+    <body>
+        <div class="header-wrapper">
+            <div class="header-container" id="header-container">
+                <div class="header-content">
+                    <h1 style="margin-top: 0px; font-size: 5rem;"><i>SFT Memorizes, RL Generalizes</i></h1>
+                    <h2 style="margin-top: 0px; font-size: 3rem;">A Comparative Study of Foundation Model Post-training</h2>
+                    
+                    <div class="icon-container">
+                        <!-- <div class="icon-item">
+                            <img src="./assets/text_icon_2.svg" alt="Visual Representation Icon">
+                            <div><strong>Generalization in Text-based Rules</strong>: RL generalizes rule-base tasks, while SFT memorizes the training rule.</div>
+                        </div>
+                        <div class="icon-item">
+                            <img src="./assets/poker.svg" alt="Connector Design Icon">
+                            <div><strong>Generalization in Visual Out-of-distribution Tasks</strong>: Similar phenomenon happens when we deploy distribution shifts on the visual observation.</div>
+                        </div>
+                        <div class="icon-item">
+                            <img src="static/img/icons/visual.svg" alt="Instruction Tuning Data Icon">
+                            <div><strong>RL Improves Visual Capabilities</strong>: We superisingly find that RL improves visual recognition capabilities.</div>
+                        </div> -->
+                    </div>
+
+                    <div class="button-container">
+                        <!-- <a href="https://arxiv.org/abs/2406.16860" class="button paper-link" target="_blank">
+                            <span class="icon is-small">
+                                <i class="ai ai-arxiv"></i>
+                            </span>
+                            arXiv
+                        </a> -->
+                        <!-- <a href="https://arxiv.org/pdf/2406.16860" class="button paper-link" target="_blank">
+                            <span class="icon is-small">
+                                <i class="fas fa-file-pdf"></i>
+                            </span>
+                            <span>pdf</span>
+                        </a> -->
+                        <!-- <a href="https://github.com/LeslieTrue/SFTvsRL" class="button" target="_blank">
+                            <span class="icon is-small">
+                                <i class="fab fa-github"></i>
+                            </span>
+                            <span>Code</span>
+                        </a>
+                        <a href="https://huggingface.co/collections/nyu-visionx/cambrian-1-models-666fa7116d5420e514b0f23c" class="button" target="_blank">
+                            <span class="icon is-small">
+                                <img src="https://huggingface.co/front/assets/huggingface_logo-noborder.svg" alt="Hugging Face logo" style="height: 1em;">
+                            </span>
+                            <span>Checkpoints</span>
+                        </a>
+                        <a href="https://huggingface.co/collections/nyu-visionx/cambrian-data-6667ce801e179b4fbe774e11" class="button" target="_blank">
+                            <span class="icon is-small">
+                                <img src="https://huggingface.co/front/assets/huggingface_logo-noborder.svg" alt="Hugging Face logo" style="height: 1em;">
+                            </span>
+                            <span>Data</span>
+                        </a>                         -->
+                    </div>
+                </div>
+                <div class="header-image">
+                    <img draggable="false" src="static/img/teaser_sftvsrl_v3.png" alt="Teaser Image" class="teaser-image">
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
