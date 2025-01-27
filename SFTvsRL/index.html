@@ -198,10 +198,6 @@
                 <img src="static/img/icons/visual.svg" alt="Recipe Logo" class="icon">
                 Improve<br>Recognition
             </a>
-            <!-- <a href="#sec:benchmarking" class="icon-link">
-                <img src="static/img/icons/eval.svg" alt="Eval Logo" class="icon">
-                Ablation<br>Studies
-            </a> -->
         </div>
 
         <p class="click-hint" style="width: 85%;">
@@ -222,7 +218,14 @@
             scenarios. Further analysis reveals that RL improves the model's underlying <strong><i>visual recognition</i> capabilities</strong>,
             contributing to its enhanced generalization. We additionally conduct <strong>ablation studies</strong> and reveal necessities of SFT and verification.
         </p>
-
+        <d-figure id="fig-comparison" >
+            <figure style="text-align: center;">
+                <img data-zoomable="" draggable="false" src="./assets/teaser_v3.jpg" alt="benchmark category" style="width: 50%;">
+                <figcaption>
+                    <strong>Figure 1: </strong>A comparative study of RL and SFT on the visual navigation environment <code>V-IRL</code> for OOD generalization. OOD curves represent performance on the same task, using <i>a different textual action space</i>.
+                </figcaption>
+            </figure>
+        </d-figure>
         
 
         <hr>
@@ -235,7 +238,7 @@
                     <p class="text">
                         <p class="text">
                             Our <code>GeneralPoints</code> environment is designed to evaluate generalization of arithmetic abilities.
-                            Each state <i>s</i> of the environment contains 4 cards, described as text or presented as an image (see Figure 1 left for a visual example).
+                            Each state <i>s</i> of the environment contains 4 cards, described as text or presented as an image (see Figure 2 left for a visual example).
                             Note that when the input from <code>GeneralPoints</code> is presented in an image, it naturally introduces additional visual challenges requiring the VLM to
                             <i>recognize cards before solving the equation</i>.
                             The goal is to <i>produce an equation that equals a target number</i> (24 by default) using all 4 numbers from the cards <i>only once</i>.
@@ -250,7 +253,8 @@
                         <figure>
                             <img data-zoomable="" draggable="false" src="./assets/sequential.png" alt="benchmark category">
                             <figcaption>
-                                <strong>Figure 1: GeneralPoints task with sequential revision.</strong>
+                                <strong>Figure 2: </strong>GeneralPoints task with sequential revision. The model generate the next answer conditioned
+                                on <i>all previous answers and information</i> from the verifier. We adopt this paradigm for RL training and evaluation.
                             </figcaption>
                         </figure>
                     </d-figure>
@@ -273,7 +277,7 @@ We further utilize the <code>V-IRL</code> environment to study <i>spatial reason
                         <figure style="text-align: center;">
                             <img data-zoomable="" draggable="false" src="./assets/RLMLLM_virl_example_v5.jpg" alt="benchmark category" style="width: 70%;">
                             <figcaption>
-                                <strong>Figure 2: Demonstration of one navigation task in V-IRL.</strong> Agent navigates from place to place following the given linguistic navigation instructions. The navigation procedure is shown at the top, with the navigation instructions displayed below. 
+                                <strong>Figure 3: </strong>Demonstration of one navigation task in <code>V-IRL</code>. Agent navigates from place to place following the given linguistic navigation instructions. The navigation procedure is shown at the top, with the navigation instructions displayed below. 
                             </figcaption>
                         </figure>
                     </d-figure>
@@ -303,7 +307,7 @@ We further utilize the <code>V-IRL</code> environment to study <i>spatial reason
                     <figure style="text-align: center;">
                         <img data-zoomable="" draggable="false" src="assets/Env_Plots_v2.jpg" alt="4env_plot" style="width: 85%;">
                         <figcaption>
-                            <strong>Figure 3: Success rate (%) - GFLOPs trendlines for RL and SFT on GeneralPoints and V-IRL.</strong> 
+                            <strong>Figure 4: </strong>Success rate (%) - GFLOPs trendlines for RL and SFT on <code>GeneralPoints</code> and <code>V-IRL</code>.
                         </figcaption>
                     </figure>
                 </d-figure>
@@ -323,7 +327,7 @@ We further utilize the <code>V-IRL</code> environment to study <i>spatial reason
                         <figure style="text-align: center;">
                             <img data-zoomable="" draggable="false" src="assets/vision_ood.jpg" alt="4env_plot" style="width: 85%;">
                             <figcaption>
-                                <strong>Figure 4: Comparison of out-of-distribution performance under visual variants.</strong> We present both the performance dynamics (shown as lines) and final performance (shown as bars) for visual out-of-distribution evaluations. As a byproduct, we achieve state-of-the-art on <code>V-IRL</code> VLN mini benchmark.
+                                <strong>Figure 5: </strong>Comparison of out-of-distribution performance under visual variants. We present both the performance dynamics (shown as lines) and final performance (shown as bars) for visual out-of-distribution evaluations. As a byproduct, we achieve state-of-the-art on <code>V-IRL</code> VLN mini benchmark.
                             </figcaption>
                         </figure>
                     </d-figure>
@@ -336,14 +340,14 @@ We further utilize the <code>V-IRL</code> environment to study <i>spatial reason
                         we consider a natural follow-up question: <i>How does RL affect VLMs' visual capabilities</i>? 
                         To study this question, we conducted additional ablation studies in the <code>GP-VL</code> environment to investigate the OOD performance of RL and SFT, 
                         along with the model's visual recognition accuracy, in terms of recognizing the 4 cards from the input image. 
-                        In particular, we study how scaling post-training compute via RL/SFT both affects generalization in rule-based OOD (Figure 5 left), 
-                        and visual recognition accuracy and visual OOD (Figure 5 right).
+                        In particular, we study how scaling post-training compute via RL/SFT both affects generalization in rule-based OOD (Figure 6 left), 
+                        and visual recognition accuracy and visual OOD (Figure 6 right).
                     </p>
                     <d-figure id="fig-studyadapter" >
                         <figure style="text-align: center;">
                             <img data-zoomable="" draggable="false" src="assets/merged_scatter_recog_success.jpg" alt="merged_recog_sucess" style="width: 85%;">
                             <figcaption>
-                                <strong>Figure 5: Recognition vs. success rate for RL and SFT under different variants in <code>GP-VL</code>.</strong> 
+                                <strong>Figure 6: </strong> Recognition vs. success rate for RL and SFT under different variants in <code>GP-VL</code>.
                                 We report both in-distribution (<span style="color: #B85450">red</span>) and OOD 
                                 (<span style="color: #6C8EBF">blue</span>) 
                                 performance of recognition (y-axis) and episode success rate (x-axis). We denote the training compute of each data point via transparency (color bar) while connected (★-○) pairs are evaluated using same checkpoints. As scaling up post-training compute, RL improves both recognition and overall accuracy, while SFT shows opposite effect.
