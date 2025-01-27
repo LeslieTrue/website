@@ -3,13 +3,9 @@ body {
 }
 
 .header-wrapper {
-    /* max-width: 1200px; */
-    /* background-color: #265073; */
-
-    /* background: linear-gradient(127deg, #265073 0%, #596FB7 45%, #C6CF9B 70%, rgb(244,234,203) 100%); */
-    background: linear-gradient(-235deg, #000000 10%, #122153 55%, #FEAE6F 85%, rgb(244,234,203) 100%);
-    
+  background: linear-gradient(-235deg, #265073 10%, #2D8B9D 55%, #FF8E7F 85%, #FFF5E9 100%);
 }
+
 
 .header-container {
   /* color: #FFC436; */
@@ -48,9 +44,9 @@ body {
     color: inherit; /* Inherit color from parent */
     padding: 10px; /* Add padding around the link */
     margin: 10px; /* Add margin around each link for spacing */
-    border: 3px solid #508af6;
+    border: 3px solid #2D8B9D;
     border-radius: 10px;
-    background-color: #d6eefb;
+    background-color: #D9F3F7;
     flex: 1 1 100px; /* Allow flex items to grow and shrink */
 }
 
@@ -245,7 +241,7 @@ body {
 
 
 .author-link, .affiliation-link {
-    font-size: larger;
+    font-size: 1.18rem;
     color: black; /* Set the color to match the other text */
     text-decoration: none; /* Removes the underline */
     border-bottom: none;
@@ -264,7 +260,7 @@ body {
 }
 
 #affiliation {
-  font-size: 1.1em; /* Reduced from 1.6em */
+  font-size: 1.02em; /* Reduced from 1.6em */
   /* font-weight: bolder; */
 }
 

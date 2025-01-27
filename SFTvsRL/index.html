@@ -54,22 +54,19 @@
                 <div class="header-content">
                     <h1 style="margin-top: 0px"><i>SFT Memorizes, RL Generalizes</i></h1>
                     <h2>A Comparative Study of Foundation Model Post-training</h2>
-                        <p>
-                            We instantiate different training methods on top of vision-language models and discover:
-                        </p>
                     
                         <div class="icon-container">
                             <div class="icon-item">
-                                <img src="./static/img/icons/visual.svg" alt="Visual Representation Icon">
-                                <div><strong>Generalization in Text-based Rules</strong>: We explore various vision encoders and their combinations.</div>
+                                <img src="./assets/text_icon_2.svg" alt="Visual Representation Icon">
+                                <div><strong>Generalization in Text-based Rules</strong>: RL generalizes rule-base tasks, while SFT memorizes the training rule.</div>
                             </div>
                             <div class="icon-item">
-                                <img src="./static/img/icons/connector.svg" alt="Connector Design Icon">
-                                <div><strong>Generalization in Visual Out-of-distribution Tasks</strong>: We design a new dynamic and <i>spatially-aware</i> connector that integrates visual features from several models with LLMs while reducing the number of tokens.</div>
+                                <img src="./assets/poker.svg" alt="Connector Design Icon">
+                                <div><strong>Generalization in Visual Out-of-distribution Tasks</strong>: Similar phenomenon happens when we deploy distribution shifts on the visual observation.</div>
                             </div>
                             <div class="icon-item">
-                                <img src="./static/img/icons/data.svg" alt="Instruction Tuning Data Icon">
-                                <div><strong>RL Improves Visual Capabilities</strong>: We curate high-quality visual instruction-tuning data from public sources, emphasizing the importance of distribution balancing.</div>
+                                <img src="./static/img/icons/visual.svg" alt="Instruction Tuning Data Icon">
+                                <div><strong>RL Improves Visual Capabilities</strong>: We superisingly find that RL improves visual recognition capabilities.</div>
                             </div>
                             <!-- <div class="icon-item">
                                 <img src="./static/img/icons/recipe.svg" alt="Instruction Tuning Recipes Icon">
@@ -125,7 +122,7 @@
                     </div>
                 </div>
                 <div class="header-image">
-                    <img draggable="false" src="static/img/cambrian.png" alt="Teaser Image" class="teaser-image">
+                    <img draggable="false" src="static/img/teaser_sftvsrl_v3.png" alt="Teaser Image" class="teaser-image">
                 </div>
             </div>
         </div>
@@ -150,27 +147,27 @@
                     <p></p>
                 </p> -->
                 <p>
-                    <a href="https://tianzhechu.com/" class="author-link" target="_blank">Tianzhe Chu<sup>1 *</sup></a> &emsp;
-                    <a href="https://yx-s-z.github.io/" class="author-link" target="_blank">Yuexiang Zhai<sup>2 3 *</sup></a> &emsp;
-                    <a href="https://jihanyang.github.io/" class="author-link" target="_blank">Jihan Yang<sup>4</sup></a> &emsp;
-                    <a href="https://tsb0601.github.io/petertongsb/" class="author-link" target="_blank">Shengbang Tong<sup>4</sup></a> &emsp;
-                    <br>
+                    <a href="https://tianzhechu.com/" class="author-link" target="_blank">Tianzhe Chu<sup> &spadesuit; *</sup></a> &emsp;
+                    <a href="https://yx-s-z.github.io/" class="author-link" target="_blank">Yuexiang Zhai<sup> <span style="color: #E0171F;">&heartsuit; </span>&clubsuit; *</sup></a> &emsp;
+                    <a href="https://jihanyang.github.io/" class="author-link" target="_blank">Jihan Yang<sup> <span style="color: #E0171F;">&diamondsuit; </span></sup></a> &emsp;
+                    <a href="https://tsb0601.github.io/petertongsb/" class="author-link" target="_blank">Shengbang Tong<sup> <span style="color: #E0171F;">&diamondsuit; </span></sup></a> &emsp;
+                    
                     <!-- <br> -->
-                    <a href="https://www.sainingxie.com/" class="author-link" target="_blank">Saining Xie<sup>4</sup></a> &emsp;
-                    <a href="https://webdocs.cs.ualberta.ca/~dale/" class="author-link" target="_blank">Dale Schuurmans<sup>3</sup></a> &emsp;
-                    <a href="https://cs.stanford.edu/~quocle/" class="author-link" target="_blank">Quoc V. Le<sup>3</sup></a> &emsp;
-                    <a href="https://people.eecs.berkeley.edu/~svlevine/" class="author-link" target="_blank">Sergey Levine<sup>2</sup></a> &emsp;
-                    <a href="https://people.eecs.berkeley.edu/~yima/" class="author-link" target="_blank">Yi Ma<sup>1 2</sup></a> &emsp;
+                    <a href="https://www.sainingxie.com/" class="author-link" target="_blank">Saining Xie<sup> &clubsuit; <span style="color: #E0171F;">&diamondsuit; </span></sup></a> &emsp;
+                    <a href="https://webdocs.cs.ualberta.ca/~dale/" class="author-link" target="_blank">Dale Schuurmans<sup> &clubsuit;</sup></a> &emsp;
+                    <a href="https://cs.stanford.edu/~quocle/" class="author-link" target="_blank">Quoc V. Le<sup> &clubsuit;</sup></a> &emsp;
+                    <a href="https://people.eecs.berkeley.edu/~svlevine/" class="author-link" target="_blank">Sergey Levine<sup> <span style="color: #E0171F;">&heartsuit; </span></sup></a> &emsp;
+                    <a href="https://people.eecs.berkeley.edu/~yima/" class="author-link" target="_blank">Yi Ma<sup> &spadesuit; <span style="color: #E0171F;">&heartsuit; </span></sup></a> &emsp;
                     <!-- <p></p> -->
                 </p>
                 <p>
-                    <a style="text-align: center;" href="https://datascience.hku.hk/" class="affiliation-link" id="affiliation" target="_blank"><sup>1</sup>HKU </a>
-                    <a style="text-align: center;" href="https://eecs.berkeley.edu/" class="affiliation-link" id="affiliation" target="_blank"><sup>2</sup>UC Berkeley </a>
-                    <a style="text-align: center;" href="https://deepmind.google/" class="affiliation-link" id="affiliation" target="_blank"><sup>3</sup>Google DeepMind </a>
-                    <a style="text-align: center;" href="https://cs.nyu.edu/home/index.html" class="affiliation-link" id="affiliation" target="_blank"><sup>4</sup>NYU </a>
+                    <a style="text-align: center;" href="https://datascience.hku.hk/" class="affiliation-link" id="affiliation" target="_blank"><sup>&spadesuit;</sup>HKU </a>
+                    <a style="text-align: center;" href="https://eecs.berkeley.edu/" class="affiliation-link" id="affiliation" target="_blank"><sup><span style="color: #E0171F;">&heartsuit;</span></sup>UC Berkeley </a>
+                    <a style="text-align: center;" href="https://deepmind.google/" class="affiliation-link" id="affiliation" target="_blank"><sup>&clubs;</sup>Google DeepMind </a>
+                    <a style="text-align: center;" href="https://cs.nyu.edu/home/index.html" class="affiliation-link" id="affiliation" target="_blank"><sup><span style="color: #E0171F;">&diamondsuit;</span></sup>NYU </a>
                     <br>
                     <!-- date -->
-                    <span class="date">Jan. 24th 2025</span>
+                    <span class="date">Jan. 24th, 2025</span>
                 </p>
                 <!-- <p style="text-align: center; font-size: 1.35em; color: red; font-weight: bold;">
                     <a href="https://neurips.cc/virtual/2024/poster/94880" target="_blank">NeurIPS 2024 (Oral)</a>
@@ -186,13 +183,11 @@
         <p class="text abstract">
 
             Supervised fine-tuning (SFT) and reinforcement
-            learning (RL) are widely used post-training tech-
-            niques for foundation models. However, their
-            roles in enhancing model generalization capabil-
-            ities remain unclear. This paper studies the different effects of SFT and RL on generalization
+            learning (RL) are widely used post-training techniques for foundation models. However, their
+            roles in enhancing model generalization capabilities remain unclear. This paper studies the different effects of SFT and RL on generalization
             and memorization.
 
-            <br><br>
+            <!-- <br><br>
             Cambrian-1 is structured around five key pillars, each offering important insights into the design space of MLLMs:
             <ol class="text">
                 <li><strong><a href="#visual_representations">&sect;Visual Representations</a></strong>: We explore various vision encoders and their combinations.</li>
@@ -200,30 +195,30 @@
                 <li><strong><a href="#instruction_data">&sect;Instruction Tuning Data</a></strong>: We curate high-quality visual instruction-tuning data from public sources, emphasizing the importance of distribution balancing.</li>
                 <li><strong><a href="#sec:inst_tuning">&sect;Instruction Tuning Recipes</a></strong>: We discuss instruction tuning strategies and practices.</li>
                 <li><strong><a href="#sec:benchmarking">&sect;Benchmarking</a></strong>: We examine existing MLLM benchmarks and introduce a new vision-centric benchmark "CV-Bench".</li>
-            </ol>
+            </ol> -->
         </p>
 
         <div class="icon-row">
-            <a href="#visual-representation" class="icon-link">
-                <img src="static/img/icons/visual.svg" alt="Visual Representation Logo" class="icon">
-                Visual<br>Representations
+            <a href="#sec:evaluation_tasks" class="icon-link">
+                <img src="./assets/earth_abs.svg" alt="Visual Representation Logo" class="icon">
+                Evaluation Tasks
             </a>
-            <a href="#connector_design" class="icon-link">
-                <img src="static/img/icons/connector.svg" alt="Connector Logo" class="icon">
-                Connector<br>Design
+            <a href="#sec:generalize_rules" class="icon-link">
+                <img src="./assets/text_icon_2.svg" alt="Connector Logo" class="icon">
+                Generalize<br>Rules
             </a>
-            <a href="#instruction_data" class="icon-link">
-                <img src="static/img/icons/data.svg" alt="Data Logo" class="icon">
-                Instruction<br>Data
+            <a href="#sec:generalize_vision" class="icon-link">
+                <img src="./assets/poker.svg" alt="Data Logo" class="icon">
+                Generalize<br>Vision
             </a>
-            <a href="#sec:inst_tuning" class="icon-link">
-                <img src="static/img/icons/recipe.svg" alt="Recipe Logo" class="icon">
-                Instruction<br>Recipes
+            <a href="#sec:improve_recognition" class="icon-link">
+                <img src="static/img/icons/visual.svg" alt="Recipe Logo" class="icon">
+                Improve<br>Recognition
             </a>
-            <a href="#sec:benchmarking" class="icon-link">
+            <!-- <a href="#sec:benchmarking" class="icon-link">
                 <img src="static/img/icons/eval.svg" alt="Eval Logo" class="icon">
-                Evaluation<br>Protocol
-            </a>
+                Ablation<br>Studies
+            </a> -->
         </div>
 
         <p class="click-hint" style="width: 85%;">
@@ -233,41 +228,74 @@
 
 
         <p class="text abstract">
-            To this end, Cambrian-1 not only achieves state-of-the-art performance, but also serves as a comprehensive, open cookbook for instruction-tuned MLLMs. See <a href="#State-of-the-art-MLLM-performance">§State-of-the-art MLLM performance</a>. 
-            We provide <a href="https://huggingface.co/nyu-visionx" target="_blank">model weights</a>, 
-            <a href="https://github.com/cambrian-mllm/cambrian" target="_blank">code</a>, 
-            <a href="https://huggingface.co/nyu-visionx" target="_blank">datasets</a>, 
-            and detailed instruction-tuning and evaluation recipes. We hope our release will inspire and accelerate advancements in multimodal systems and visual representation learning.
+            We introduce
+            2 <strong>evaluation tasks</strong> to assess how models trained with
+            SFT and RL generalize to unseen variants in both
+            textual and visual domains. We show that RL,
+            especially when trained with an outcome-based
+            reward, generalizes across both <strong><i>textual rule</i> variations</strong> and <strong><i>visual</i> variations</strong>. SFT, in contrast,
+            tends to memorize training data and struggles to
+            generalize to unseen rules or out-of-distribution
+            scenarios. Further analysis reveals that RL improves the model's underlying <strong><i>visual recognition</i> capabilities</strong>,
+            contributing to its enhanced generalization. We additionally conduct <strong>ablation studies</strong> and reveal necessities of SFT and verification.
         </p>
 
         
 
         <hr>
 
-        <div id='visual_representations' class="vision-block">
+        <div id='evaluation_tasks' class="vision-block">
             
-            <div id="sec:benchmarking" class="sub-section">
-                <h1 class="text">Analyzing the Benchmarks</h1>
+            <div id="sec:evaluation_tasks" class="sub-section">
+                <h1 class="text">The GeneralPoints Environment</h1>
 
                     <p class="text">
                         <p class="text">
-                        <strong>Who's answering: LLM or MLLM?:</strong> We compare performance between vision-disabled and vision-enabled settings across MLLMs trained with 23 different vision backbones. Our findings reveal that some benchmarks such as MMMU and AI2D are less reliant on visual inputs, whereas others such as MMVP and MME experience significant performance declines, indicating their effective evaluation of multimodality</li>
+                            Our <code>GeneralPoints</code> environment is designed to evaluate generalization of arithmetic abilities.
+                            Each state <i>s</i> of the environment contains 4 cards, described as text or presented as an image (see Figure 1 left for a visual example).
+                            Note that when the input from <code>GeneralPoints</code> is presented in an image, it naturally introduces additional visual challenges requiring the VLM to
+                            <i>recognize cards before solving the equation</i>.
+                            The goal is to <i>produce an equation that equals a target number</i> (24 by default) using all 4 numbers from the cards <i>only once</i>.
                         </p>
                         <p class="text">
-                            <strong>Benchmark Clustering and Analysis:</strong> Through correlation analysis and principal component analysis of MLLM performances across various benchmarks, distinct clusters emerge categorized as "General," "Knowledge," "Chart & OCR," and "Vision-Centric." 
-                            We also find that vision-centric benchmarks are underrepresented in the current evaluation landscape.
+                        <strong>Rule variants.</strong> To study whether the model learns arithmetic operations or simply memorizes the post-training data, we introduce rule variations in <code>GeneralPoints</code>. These variations consist of: interpreting the symbols 'J', 'Q', and 'K' either as '11', '12', and '13', respectively, or all as the same number '10'. For studying the ruled based generalization, we post-train the model <i>using one rule</i>, and <i>evaluate on a different rule</i>.
+                        </p>
+                        <p class="text">
+                            <strong>Visual variants.</strong> The <code>GeneralPoints</code> environment can also be naturally customized to evaluate the generalization across visual variants. Since the major visual challenge is to <i>recognize the number in the cards</i>, agnostic to <i>the color</i> of the cards. Hence we consider the cards with different colors as visual variants of the task. In the visual generalization setting, we train the model using cards in one color, and test performance on the other color.
                         </p>
                     <d-figure id="fig-comparison" >
                         <figure>
-                            <img data-zoomable="" draggable="false" src="static/img/bench_cat.png" alt="benchmark category">
+                            <img data-zoomable="" draggable="false" src="./assets/sequential.png" alt="benchmark category">
                             <figcaption>
-                                <strong>Figure 1:</strong> Analyzing the benchmarks.
-                                <strong>Left:</strong> Performance comparison of MLLMs with visual input enabled and disabled across various benchmarks. <strong>Right:</strong> Principal component analysis displaying clusters of benchmarks based on performance metrics, with bubble size corresponding to benchmark size.
+                                <strong>Figure 1: GeneralPoints task with sequential revision.</strong>
                             </figcaption>
                         </figure>
                     </d-figure>
             </div>
-            <div id="cv-bench" class="sub-section">
+            <div id="sec:virl" class="sub-section">
+                <h1 class="text">The V-IRL Environment</h1>
+
+                    <p class="text">
+                        <p class="text">
+We further utilize the <code>V-IRL</code> environment to study <i>spatial reasoning</i> ability in an open-world navigation domain that uses <i>realistic visual input</i>. The major visual challenge in <code>V-IRL</code> involves <i>recognizing different landmarks from the visual observation</i> before taking an action. The goal is to <i>navigate to a target location by following a set of instructions that contain spatial information.</i>
+                        </p>
+                        <p class="text">
+                        <strong>Rule variants.</strong> 
+                        To evaluate whether the model possesses spatial knowledge or simply memorizes post-training data, we consider two distinct action space configurations. The first variant utilizes an <i>absolute orientation</i> action space, which includes {'north', 'northeast', 'east', 'southeast', 'south', 'southwest', 'west', 'northwest'}. The second variant employs a <i>relative orientation</i> action space, containing {'left', 'right', 'slightly left', 'slightly right'}. This relative configuration adjusts the current orientation by 90 degrees or 45 degrees to the left or right, respectively.
+                        </p>
+                        <p class="text">
+                            <strong>Visual variants.</strong> The key visual challenge in <code>V-IRL</code> is to recognize landmarks from the visual observations. Since the <code>V-IRL</code> environment contains visual observations from different cities, we can assess visual generalization in <code>V-IRL</code> by training the model to navigate in one location and then evaluate its performance in <i>different locations</i>.
+                        </p>
+                    <d-figure id="fig-comparison" >
+                        <figure style="text-align: center;">
+                            <img data-zoomable="" draggable="false" src="./assets/RLMLLM_virl_example_v5.jpg" alt="benchmark category" style="width: 70%;">
+                            <figcaption>
+                                <strong>Figure 2: Demonstration of one navigation task in V-IRL.</strong> Agent navigates from place to place following the given linguistic navigation instructions. The navigation procedure is shown at the top, with the navigation instructions displayed below. 
+                            </figcaption>
+                        </figure>
+                    </d-figure>
+            </div>
+            <!-- <div id="cv-bench" class="sub-section">
 
                     <p class="text"><strong>Cambrian Vision-Centric Benchmark (CV-Bench) </strong>
                         To address the scarcity of vision-centric benchmarks, we introduce CV-Bench&mdash;repurposing standard vision tasks for multimodal evaluation. CV-Bench contains approximately 2600 vision-centric VQA questions, addressing the issues with existing vision-centric bechmark size.
@@ -282,36 +310,66 @@
                         </figure>
                     </d-figure>
 
-            </div>
-            <div id="sec:inst_tuning" class="sub-section">
-
-            <h1 class="text">Instruction Tuning Recipes </h1>
+            </div> -->
+            <div id="sec:generalize_vision" class="sub-section">
+                <h1 class="text">Generalization across Rules </h1>
                 <p class="text">
-                    MLLMs connect pre-trained LLM and vision backbones using a connector such as an MLP projector. Various studies have suggested different optimal training methodologies for MLLMs.
-                </p>
-                <p class="text">
-                    <strong>One Stage vs Two Stage Training</strong> Recent work suggests skipping connector pre-training to reduce compute costs without harming performance. 
-                    We experiment with 0, 0.5M, and 1.2M adapter data. Following LLaVA's method<d-cite key="liu2023visual"></d-cite>, we initially tune only the connector, then unfreeze both the LLM and connector for instruction tuning with a 737K data mix. <a href="#fig-studyadapter">Figure 3</a> indicates that pre-training the connector boosts performance, and using more adapter data enhances it further, leading us to standardize on a 2-stage training approach with 1.2M adapter data.
-                </p>
-                
-                <p class="text">
-                    <strong>Freeze vs Unfreeze Vision Encoder</strong>
-                    There are also mixed practices in freezing or unfreezing vision backbones during fine-tuning. 
-                    Some argue that unfreezing the vision backbone significantly degrades performance. 
-                    Our experiments demonstrate that, with a reasonable vision model learning rate, 
-                    unfreezing benefits performance across all benchmarks except for a marginal change in Knowledge benchmarks.
+                    We evaluate the performance of different post-training methods on <code>GeneralPoints</code> and <code>V-IRL</code>, each of which has a pure language (-L) and a vision-language (-VL) variant, and each encompassing rule variations. For each task, we separately scale the training compute for RL and SFT on a single rule. We consider the results on the trained rule as in-distribution (ID) performance, whereas results on the <i>unseen</i> rules measures out-of-distribution (OOD) generalization. In <code>GeneralPoints</code>, the ID case treats all 'J', 'Q', 'K' as 10, and the OOD cases interprets them as 11, 12, and 13. As for <code>V-IRL</code>, the ID case adopts the <i>absolute orientation</i> coordinate system and the OOD case uses the <i>relative orientation</i> action space.
                 </p>
                 <d-figure id="fig-studyadapter" >
-                    <figure>
-                        <img data-zoomable="" draggable="false" src="static/img/performance_plot.png" alt="Instruction Tuning Recipes">
+                    <figure style="text-align: center;">
+                        <img data-zoomable="" draggable="false" src="assets/Env_Plots_v2.jpg" alt="4env_plot" style="width: 85%;">
                         <figcaption>
-                            <strong>Figure 3:</strong> MLLMs benefit from pre-training the adapter with more data, and finetuning with unfrozen visual encoder.
+                            <strong>Figure 3: Success rate (%) - GFLOPs trendlines for RL and SFT on GeneralPoints and V-IRL.</strong> 
                         </figcaption>
                     </figure>
                 </d-figure>
             </div>
-            <div id='visual-representation' class="viusal-representation-block">
-            <h1 class="text">MLLMs as a Vision Model Evaluator </h1>
+            <div id="sec:generalize_rules" class="sub-section">
+                <h1 class="text">Generalization in Visual Out-of-Distribution Tasks </h1>
+                    <p class="text">
+                        Since VLMs also incorporate a visual modality, 
+                        we next study the effects of <i>visual</i> variation in OOD generalization. 
+                        For <code>GeneralPoints</code>, we train the VLM using the black suits (♠, ♣) 
+                        and test out-of-distribution performance on the red suits 
+                        (<span style="color: #E0171F;">♥</span>, <span style="color: #E0171F;">♦</span>). 
+                        For <code>V-IRL</code>, we train the model on routes collected in New York City and evaluate it on the original <code>V-IRL</code> 
+                        VLN mini benchmark containing routes from <i>various cities worldwide</i>. Note that the rules remain consistent across experiments in this section.
+                    </p>
+                    <d-figure id="fig-studyadapter" >
+                        <figure style="text-align: center;">
+                            <img data-zoomable="" draggable="false" src="assets/vision_ood.jpg" alt="4env_plot" style="width: 85%;">
+                            <figcaption>
+                                <strong>Figure 4: Comparison of out-of-distribution performance under visual variants.</strong> We present both the performance dynamics (shown as lines) and final performance (shown as bars) for visual out-of-distribution evaluations. As a byproduct, we achieve state-of-the-art on <code>V-IRL</code> VLN mini benchmark.
+                            </figcaption>
+                        </figure>
+                    </d-figure>
+            </div>
+
+            <div id="sec:improve_recognition" class="sub-section">
+                <h1 class="text">RL Improves Visual Capabilities </h1>
+                    <p class="text">
+                        Building upon the above observation that VLMs trained with RL generalize to visual OOD tasks, 
+                        we consider a natural follow-up question: <i>How does RL affect VLMs' visual capabilities</i>? 
+                        To study this question, we conducted additional ablation studies in the <code>GP-VL</code> environment to investigate the OOD performance of RL and SFT, 
+                        along with the model's visual recognition accuracy, in terms of recognizing the 4 cards from the input image. 
+                        In particular, we study how scaling post-training compute via RL/SFT both affects generalization in rule-based OOD (Figure 5 left), 
+                        and visual recognition accuracy and visual OOD (Figure 5 right).
+                    </p>
+                    <d-figure id="fig-studyadapter" >
+                        <figure style="text-align: center;">
+                            <img data-zoomable="" draggable="false" src="assets/merged_scatter_recog_success.jpg" alt="merged_recog_sucess" style="width: 85%;">
+                            <figcaption>
+                                <strong>Figure 5: Recognition vs. success rate for RL and SFT under different variants in <code>GP-VL</code>.</strong> 
+                                We report both in-distribution (<span style="color: #B85450">red</span>) and OOD 
+                                (<span style="color: #6C8EBF">blue</span>) 
+                                performance of recognition (y-axis) and episode success rate (x-axis). We denote the training compute of each data point via transparency (color bar) while connected (★-○) pairs are evaluated using same checkpoints. As scaling up post-training compute, RL improves both recognition and overall accuracy, while SFT shows opposite effect.
+                            </figcaption>
+                        </figure>
+                    </d-figure>
+            </div>
+            <!-- <div id="sec:generalize_vision" class="sub-section">
+            <h1 class="text">Generalization in Visual Out-of-Distribution Tasks</h1>
                 
                 <p class="text">
                     MLLMs provide a more real-world evaluation of visual representations than traditional benchmarks like ImageNet-1k. We use 2-stage instruction tuning with 1.2M adapter data and 737K fine-tuning data to compare a variety of vision models on downstream MLLM performance.
@@ -548,10 +606,10 @@
                     Therefore, we seek a more effective strategy that fully leverages model combinations with less information loss and more flexibility.
                 </p>
 
-        </div>
+        </div> -->
         </div>
 
-        <div id='connector_design' class="connector-block">
+        <!-- <div id='connector_design' class="connector-block">
 
             <h1 class="text">Spatial Vision Aggregator (SVA): A New Connector Design</h1>
             <p class="text">
@@ -570,9 +628,9 @@
                     </figcaption>
                 </figure>
             </d-figure>
-        </div>
+        </div> -->
 
-        <div id="instruction_data" class="data-block">
+        <!-- <div id="instruction_data" class="data-block">
             <h1 class="text">Instruction Tuning Data for Training MLLMs</h1>
             <p class="text">
                 Previous work highlights the importance of data in training MLLMs, but explicit investigations are limited. 
@@ -793,9 +851,9 @@
                     </figure>
                 </d-figure>
             </div>
-        </div>
+        </div> -->
 
-        <div id='sota' class="sota-block">
+        <!-- <div id='sota' class="sota-block">
             <h1 class="text">State of the Art MLLM Performance</h1>
             <p class="text">
                 Finally, we leverage the insights from all of our previous studies to train a high-performance Cambrian model.
@@ -1228,8 +1286,8 @@
                 </figure>
             </d-figure>
 
-        </div>
-
+        </div> -->
+<!-- 
         <div id="conclusion" style="position: relative; margin-top: 40px; margin-bottom: 0px;">
             <h2 class="text" style="margin-top:0px; margin-bottom:10px">Conclusion</h2>
             <p class="text">
@@ -1237,7 +1295,7 @@
                 and excel in visual-centric tasks. We provide model weights, open-source code, datasets, and detailed recipes for model training and evaluation. 
                 We hope our work will strengthen the open research community and accelerate research in both visual representation learning and multimodal systems.
             </p>
-        </div>
+        </div> -->
 
         <div id="acknowledgement" style="position: relative; margin-top: 40px; margin-bottom: 0px;">
             <h2 class="text" style="margin-top:0px; margin-bottom:10px">Acknowledgement</h2>
