@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
+        }
+
+        .ring-container {
+            position: relative;
+            width: 300px;
+            height: 300px;
+        }
+
+        .ring {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .segment {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            clip-path: polygon(50% 50%, 50% 0%, 100% 0%, 100% 100%, 50% 100%);
+        }
+
+        .label {
+            position: absolute;
+            white-space: nowrap;
+            font-size: 14px;
+        }
+
+        .label::before {
+            content: '';
+            position: absolute;
+            width: 30px;
+            height: 1px;
+            background: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="ring-container">
+            <div class="ring"></div>
+        </div>
+    </div>
+
+    <script>
+        const segments = [
+            { color: '#FF6B6B', angle: 45, label: 'Segment 1' },
+            { color: '#4ECDC4', angle: 45, label: 'Segment 2' },
+            { color: '#45B7D1', angle: 45, label: 'Segment 3' },
+            { color: '#96CEB4', angle: 45, label: 'Segment 4' },
+            { color: '#FFEEAD', angle: 45, label: 'Segment 5' },
+            { color: '#D4A5A5', angle: 45, label: 'Segment 6' },
+            { color: '#9AC1D9', angle: 45, label: 'Segment 7' },
+            { color: '#FFB6B6', angle: 45, label: 'Segment 8' }
+        ];
+
+        const ring = document.querySelector('.ring-container');
+        let currentAngle = 0;
+
+        segments.forEach((segment, index) => {
+            // Create segment
+            const segmentElement = document.createElement('div');
+            segmentElement.className = 'segment';
+            segmentElement.style.backgroundColor = segment.color;
+            segmentElement.style.transform = `rotate(${currentAngle}deg)`;
+
+            // Create label
+            const label = document.createElement('div');
+            label.className = 'label';
+            label.textContent = segment.label;
+
+            // Calculate label position
+            const labelAngle = currentAngle + (segment.angle / 2);
+            const labelRadius = 140;
+            const labelX = Math.cos((labelAngle - 90) * Math.PI / 180) * labelRadius;
+            const labelY = Math.sin((labelAngle - 90) * Math.PI / 180) * labelRadius;
+
+            label.style.left = `${150 + labelX}px`;
+            label.style.top = `${150 + labelY}px`;
+
+            // Adjust line position based on quadrant
+            if (labelAngle <= 90 || labelAngle > 270) {
+                label.style.transformOrigin = 'left center';
+                label.style.transform = 'translateX(10px)';
+                label.style.setProperty('--line-start', '0%');
+                label.style.setProperty('--line-end', '100%');
+            } else {
+                label.style.transformOrigin = 'right center';
+                label.style.transform = 'translateX(-10px)';
+                label.style.setProperty('--line-start', '100%');
+                label.style.setProperty('--line-end', '0%');
+            }
+
+            ring.appendChild(segmentElement);
+            ring.appendChild(label);
+
+            currentAngle += segment.angle;
+        });
+    </script>
+</body>
+</html>
