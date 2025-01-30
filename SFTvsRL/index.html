@@ -214,6 +214,10 @@
                 <img src="static/img/icons/visual.svg" alt="Recipe Logo" class="icon">
                 Improve<br>Recognition
             </a>
+            <a href="#sec:role_of_verification" class="icon-link">
+                <img src="assets/verification.svg" alt="Recipe Logo" class="icon">
+                Role of <br>Verification
+            </a>
         </div>
 
         <p class="click-hint" style="width: 85%;">
@@ -232,7 +236,7 @@
             tends to memorize training data and struggles to
             generalize to unseen rules or out-of-distribution
             scenarios. Further analysis reveals that RL improves the model's underlying <strong><i>visual recognition</i> capabilities</strong>,
-            contributing to its enhanced generalization. 
+            contributing to its enhanced generalization. We additionally provde a detailed study on the <strong><i>role of verification</i></strong> in RL training.
         </p>
         <d-figure id="fig-comparison" >
             <figure style="text-align: center;">
@@ -274,13 +278,22 @@
 
                         <p class="text">
                             <strong>V-IRL.</strong> We adopt this task to study the spatial reasoning capabilities in an open-world navigation domain.  The goal is to navigate to a target location by
-                            following a set of instructions that contain spatial information. See <a href="https://virl-platform.github.io/">original <code>V-IRL</code></a> for more design details.
+                            following a set of instructions that contain spatial information. 
                         </p>
+                        <d-figure id="fig-comparison" >
+                            <figure style="text-align: center;">
+                                <img data-zoomable="" draggable="false" src="./assets/RLMLLM_virl_example_v5.jpg" alt="benchmark category" style="width: 65%;">
+                                <figcaption>
+                                    <strong>Figure 3: </strong>Demonstration of one navigation task in <code>V-IRL</code>. Agent navigates from place to place following the given linguistic
+                                    navigation instructions in V-IRL. See <a href="https://virl-platform.github.io/">original <code>V-IRL</code></a> for more design details.
+                                </figcaption>
+                            </figure>
+                        </d-figure>
                         <d-figure id="fig-comparison" >
                             <figure>
                                 <iframe src="slider_virl.html" class="slider-frame"></iframe>
                                 <figcaption style="text-align: center;">
-                                    <strong>Figure 3: </strong>Different variants of <code>V-IRL</code>. Rule variants are 
+                                    <strong>Figure 4: </strong>Different variants of <code>V-IRL</code>. Rule variants are 
                                     achieved by switching the action space while visual variants are achieved by changing the city.
                                 </figcaption>
                             </figure>
@@ -359,7 +372,7 @@
                     <figure style="text-align: center;">
                         <img data-zoomable="" draggable="false" src="assets/Env_Plots_v2.jpg" width="" >
                         <figcaption>
-                            <strong>Figure 4: </strong>Success rate (%) - GFLOPs trendlines for RL and SFT on <code>GeneralPoints</code> and <code>V-IRL</code>.
+                            <strong>Figure 5: </strong>Success rate (%) - GFLOPs trendlines for RL and SFT on <code>GeneralPoints</code> and <code>V-IRL</code>.
                         </figcaption>
                     </figure>
                 </d-figure>
@@ -382,7 +395,7 @@
                         <figure style="text-align: center;">
                             <img data-zoomable="" draggable="false" src="assets/vision_ood.jpg" alt="4env_plot" style="width: 85%;">
                             <figcaption>
-                                <strong>Figure 5: </strong>Comparison of out-of-distribution performance under visual variants. We present both the performance dynamics (shown as lines) and final performance (shown as bars) for visual out-of-distribution evaluations. As a byproduct, we achieve state-of-the-art on <code>V-IRL</code> VLN mini benchmark.
+                                <strong>Figure 6: </strong>Comparison of out-of-distribution performance under visual variants. We present both the performance dynamics (shown as lines) and final performance (shown as bars) for visual out-of-distribution evaluations. As a byproduct, we achieve state-of-the-art on <code>V-IRL</code> VLN mini benchmark.
                             </figcaption>
                         </figure>
                     </d-figure>
@@ -399,7 +412,7 @@
                         <figure style="text-align: center;">
                             <img data-zoomable="" draggable="false" src="assets/merged_scatter_recog_success.jpg" alt="merged_recog_sucess" style="width: 85%;">
                             <figcaption>
-                                <strong>Figure 6: </strong> Recognition vs. success rate for RL and SFT under different variants in <code>GP-VL</code>.
+                                <strong>Figure 7: </strong> Recognition vs. success rate for RL and SFT under different variants in <code>GP-VL</code>.
                                 We report both in-distribution (<span style="color: #B85450">red</span>) and OOD 
                                 (<span style="color: #6C8EBF">blue</span>) 
                                 performance of recognition (y-axis) and episode success rate (x-axis). We denote the training compute of each data point via transparency (color bar) while connected (★-○) pairs are evaluated using same checkpoints. 
@@ -408,6 +421,32 @@
                     </d-figure>
             </div>
 
+
+            <div id="sec:role_of_verification" class="sub-section">
+                <h1 class="text">Verification Amplifies Generalization </h1>
+                    <p class="text">
+                        We apply squential verification-revision to reward the model during RL training. We observe that verification amplifies the generalization capabilities of RL, where 
+                        OOD performance grows faster as we increase the number of verification iterations.
+                    </p>
+                    <d-figure id="fig-studyadapter" >
+                        <figure style="text-align: center;">
+                            <img data-zoomable="" draggable="false" src="assets/sequential.png" alt="ablate_viter" style="width: 85%;">
+                            <figcaption>
+                                <strong>Figure 8: </strong> Example of applying sequential verification-revision on <code>GeneralPoints</code>.
+                            </figcaption>
+                        </figure>
+                    </d-figure>
+                    <d-figure id="fig-studyadapter" >
+                        <figure style="text-align: center;">
+                            <img data-zoomable="" draggable="false" src="assets/scatter_ablate_viter.jpg" alt="ablate_viter" style="width: 45%;">
+                            <figcaption>
+                                <strong>Figure 9: </strong> In-distribution vs. OOD performance growth
+                                on <code>GP-L</code>. We record RL experiments with different number of verification iterations (VIter) as scaling up training
+                                compute (color transparency).
+                            </figcaption>
+                        </figure>
+                    </d-figure>
+            </div>
             <div id="sec:conclusion" class="sub-section">
                 <h1 class="text">Conclusion </h1>
                 <p class="text">
@@ -417,22 +456,6 @@
 
                 </p>
             </div>
-            <!-- <div id="sec:role_of_verification" class="sub-section">
-                <h1 class="text">Verification Amplifies Generalization </h1>
-                    <p class="text">
-                        Magnitude of generalization growth is positively correlated with the number of verification iterations.
-                    </p>
-                    <d-figure id="fig-studyadapter" >
-                        <figure style="text-align: center;">
-                            <img data-zoomable="" draggable="false" src="assets/scatter_ablate_viter.jpg" alt="ablate_viter" style="width: 45%;">
-                            <figcaption>
-                                <strong>Figure 7: </strong> In-distribution vs. OOD performance growth
-                                on GP-L. We record RL experiments with different number of verification iterations (VIter) as scaling up training
-                                compute (color transparency).
-                            </figcaption>
-                        </figure>
-                    </d-figure>
-            </div> -->
         </div>
 
 
