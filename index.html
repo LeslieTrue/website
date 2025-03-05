@@ -24,7 +24,7 @@
               </p>
               <p style="text-align:center">
                 <a href="mailto: tianzhechu@gmail.com">Email</a> &nbsp/&nbsp
-                <a href="data/resume_ctz.pdf">Resume</a> &nbsp/&nbsp
+                <a href="data/resume_ctz.pdf">Resume </a> &nbsp/&nbsp
                 <a href="https://scholar.google.com/citations?hl=en&user=v6HphBcAAAAJ">Google Scholar</a> &nbsp/&nbsp
                 <a href="https://github.com/LeslieTrue">Github</a> &nbsp/&nbsp
                 <a href="https://www.twitter.com/TianzheC">Twitter</a> &nbsp/&nbsp
@@ -32,8 +32,101 @@
               </p>
             </td>
             <td style="padding:2.5%;width:60%;max-width:60%;margin-left:90%;text-align:right;">
-              <a href="images/me.jpg"><img style="width:75%;max-width:75%" alt="profile photo" src="images/me.jpg" class="hoverZoomLink"></a>
+              <div class="image-hover-container">
+                <div class="image-wrapper">
+                  <img alt="profile photo" src="images/me.jpg" class="profile-image original-image">
+                  <img alt="alternative profile photo" src="images/me_old.jpg" class="profile-image hover-image">
+                </div>
+                <div class="hover-message">Also known as this selfie.</div>
+              </div>
             </td>
+            
+            <style>
+              .image-hover-container {
+                position: relative;
+                width: 100%;
+                display: inline-block;
+                overflow: visible; /* Allows message box to show outside container */
+              }
+              
+              .image-wrapper {
+                position: relative;
+                width: 100%;
+                overflow: hidden; /* This ensures any overflow is clipped */
+                border-radius: 10px; /* Apply shape to wrapper instead of images */
+                /* For circular images, use: border-radius: 50%; */
+              }
+              
+              .profile-image {
+                width: 100%;
+                height: 100%;
+                object-fit: cover; /* Makes image cover the entire container */
+                display: block;
+              }
+              
+              .original-image {
+                position: relative;
+                z-index: 1;
+                transition: opacity 0.3s ease;
+              }
+              
+              .hover-image {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                z-index: 2;
+                opacity: 0;
+                transition: opacity 0.3s ease;
+              }
+              
+              .hover-message {
+                position: absolute;
+                bottom: -60px; /* Position below the image */
+                left: 50%;
+                transform: translateX(-50%) translateY(-10px);
+                background-color: #333;
+                color: white;
+                padding: 8px 12px;
+                border-radius: 6px;
+                font-size: 14px;
+                opacity: 0;
+                visibility: hidden;
+                transition: all 0.3s ease;
+                white-space: nowrap;
+                box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+                z-index: 100;
+                text-align: center;
+                min-width: 150px; /* Ensures a minimum width for the message */
+              }
+              
+              /* Add small triangle pointer to the message box */
+              .hover-message:after {
+                content: '';
+                position: absolute;
+                top: -10px;
+                left: 50%;
+                margin-left: -5px;
+                border-width: 5px;
+                border-style: solid;
+                border-color: transparent transparent #333 transparent;
+              }
+              
+              .image-hover-container:hover .original-image {
+                opacity: 0;
+              }
+              
+              .image-hover-container:hover .hover-image {
+                opacity: 1;
+              }
+              
+              .image-hover-container:hover .hover-message {
+                opacity: 1;
+                visibility: visible;
+                transform: translateX(-50%) translateY(0);
+              }
+            </style>
           </tr>
         </tbody></table>
         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
