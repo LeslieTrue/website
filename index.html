@@ -20,7 +20,14 @@
               <p style="text-align:center">
                 <name>Tianzhe Chu</name>
               </p>
-              <p>I'm a 1st year Ph.D student at HKU IDS advised by Prof. <a href="http://people.eecs.berkeley.edu/~yima/">Yi Ma</a>. I recently obtained B.Eng. in Computer Science (Honor) from ShanghaiTech Unviersity. I'm from Suzhou.
+              <p>I'm a 1st year Ph.D student at HKU IDS advised by Prof. <a href="http://people.eecs.berkeley.edu/~yima/">Yi Ma</a>. Before that, I obtained B.Eng. in Computer Science (Honor) from ShanghaiTech Unviersity. 
+                I started my research journey at <span class="text-hover-container">Berkeley
+                  <span class="text-hover-message">Synthesis is strengthed there :)</span>
+                </span> also with Yi.
+                I am from Suzhou and love to 
+                <span class="text-hover-container">season my dishes with sweet
+                  <span class="text-hover-message">Opposite cooking philosophy easily get me pissed :/</span>
+                </span>.
               </p>
               <p style="text-align:center">
                 <a href="mailto: tianzhechu@gmail.com">Email</a> &nbsp/&nbsp
@@ -126,6 +133,54 @@
                 visibility: visible;
                 transform: translateX(-50%) translateY(0);
               }
+              
+              /* New styles for text hover effect */
+              .text-hover-container {
+                position: relative;
+                display: inline-block;
+                cursor: pointer;
+                color: inherit;
+                text-decoration: underline dotted;
+              }
+              
+              .text-hover-message {
+                position: absolute;
+                bottom: 100%;
+                left: 50%;
+                transform: translateX(-50%) translateY(10px);
+                background-color: #333;
+                color: white;
+                padding: 8px 12px;
+                border-radius: 6px;
+                font-size: 14px;
+                opacity: 0;
+                visibility: hidden;
+                transition: all 0.3s ease;
+                white-space: nowrap;
+                box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+                z-index: 100;
+                text-align: center;
+                min-width: 150px;
+                margin-bottom: 5px;
+              }
+              
+              /* Add small triangle pointer to the text message box */
+              .text-hover-message:after {
+                content: '';
+                position: absolute;
+                bottom: -10px;
+                left: 50%;
+                margin-left: -5px;
+                border-width: 5px;
+                border-style: solid;
+                border-color: #333 transparent transparent transparent;
+              }
+              
+              .text-hover-container:hover .text-hover-message {
+                opacity: 1;
+                visibility: visible;
+                transform: translateX(-50%) translateY(0);
+              }
             </style>
           </tr>
         </tbody></table>
@@ -134,7 +189,8 @@
             <td style="padding:20px;width:100%;vertical-align:middle">
               <heading>Research</heading>
               <p>
-                Recently, I bet on training (M)LLM with reinforcement learning, speicifally on its <a href="SFTvsRL/index.html">empirical understanding</a> and reasoning.
+                I am generally interested in data, architecture, training, and understanding of foundation models. 
+                Recently, I bet on training (M)LLM with reinforcement learning, speicifally on its <a href="SFTvsRL/index.html">empirical understanding</a>. 
                 Prior to this, I did some <a href="https://arxiv.org/abs/2306.05272">representation learning</a> and <a href="https://arxiv.org/abs/2308.16271">interpretability</a> research
                 during my visit at Berkeley.
 
@@ -300,7 +356,7 @@
               <a href="https://ma-lab-berkeley.github.io/CRATE/">project page</a> / <a href="https://github.com/Ma-Lab-Berkeley/CRATE">code</a> / <a href="https://arxiv.org/abs/2311.13110">arxiv</a>
               <br>
               <p></p>
-              <p>We propose CRATE(comprehensive version), a “white-box” transformer neural network architecture with strong performance at scale. “White-box” means we derive each layer of CRATE from first principles, from the perspective of compressing the data distribution with respect to a simple, local model. CRATE has been extended to MAE, DINO, BERT, and more transformer-based
+              <p>We propose CRATE(comprehensive version), a "white-box" transformer neural network architecture with strong performance at scale. "White-box" means we derive each layer of CRATE from first principles, from the perspective of compressing the data distribution with respect to a simple, local model. CRATE has been extended to MAE, DINO, BERT, and more transformer-based
                 frameworks.</p>
             </td>
           </tr>
