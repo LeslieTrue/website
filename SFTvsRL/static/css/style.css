@@ -239,9 +239,14 @@ body {
     text-align: center;  /* Center align the text */
 }
 
+.icml2025 {
+    font-size: 1.25em;
+    color: black;
+    letter-spacing: 1px;
+}
 
 .author-link, .affiliation-link {
-    font-size: 1.18rem;
+    font-size: 1.12rem;
     color: black; /* Set the color to match the other text */
     text-decoration: none; /* Removes the underline */
     border-bottom: none;
@@ -1475,4 +1480,11 @@ iframe {
     padding: 2em;
     color: #222;
     font-size: 1em;
+}
+
+.affiliation-icon {
+    height: 0.5em;
+    width: auto;
+    vertical-align: middle;
+    margin-left: 2px;
 }
