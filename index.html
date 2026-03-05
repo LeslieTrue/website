@@ -30,11 +30,11 @@
                 </span>.
               </p>
               <p style="text-align:center">
-                <a href="mailto: tianzhechu@gmail.com">Email</a> &nbsp/&nbsp
-                <a href="data/resume_ctz.pdf">Resume </a> &nbsp/&nbsp
-                <a href="https://scholar.google.com/citations?hl=en&user=v6HphBcAAAAJ">Google Scholar</a> &nbsp/&nbsp
-                <a href="https://github.com/LeslieTrue">Github</a> &nbsp/&nbsp
-                <a href="https://www.twitter.com/TianzheC">Twitter</a> &nbsp/&nbsp
+                <a href="mailto: tianzhechu@gmail.com">Email</a> &nbsp;&middot;&nbsp;
+                <a href="data/resume_ctz.pdf">Resume</a> &nbsp;&middot;&nbsp;
+                <a href="https://scholar.google.com/citations?hl=en&user=v6HphBcAAAAJ">Google Scholar</a> &nbsp;&middot;&nbsp;
+                <a href="https://github.com/LeslieTrue">Github</a> &nbsp;&middot;&nbsp;
+                <a href="https://www.twitter.com/TianzheC">Twitter</a> &nbsp;&middot;&nbsp;
                 <a href="https://tianzhechu.notion.site/photos">Photos</a>
               </p>
             </td>
@@ -53,30 +53,30 @@
                 position: relative;
                 width: 100%;
                 display: inline-block;
-                overflow: visible; /* Allows message box to show outside container */
+                overflow: visible;
               }
-              
+
               .image-wrapper {
                 position: relative;
                 width: 100%;
-                overflow: hidden; /* This ensures any overflow is clipped */
-                border-radius: 10px; /* Apply shape to wrapper instead of images */
-                /* For circular images, use: border-radius: 50%; */
+                overflow: hidden;
+                border-radius: 12px;
+                box-shadow: 0 2px 16px rgba(0, 0, 0, 0.06);
               }
-              
+
               .profile-image {
                 width: 100%;
                 height: 100%;
-                object-fit: cover; /* Makes image cover the entire container */
+                object-fit: cover;
                 display: block;
               }
-              
+
               .original-image {
                 position: relative;
                 z-index: 1;
-                transition: opacity 0.3s ease;
+                transition: opacity 0.4s ease;
               }
-              
+
               .hover-image {
                 position: absolute;
                 top: 0;
@@ -85,97 +85,101 @@
                 height: 100%;
                 z-index: 2;
                 opacity: 0;
-                transition: opacity 0.3s ease;
+                transition: opacity 0.4s ease;
               }
-              
+
               .hover-message {
                 position: absolute;
-                bottom: -60px; /* Position below the image */
+                bottom: -50px;
                 left: 50%;
-                transform: translateX(-50%) translateY(-10px);
-                background-color: #333;
-                color: white;
-                padding: 8px 12px;
-                border-radius: 6px;
-                font-size: 14px;
+                transform: translateX(-50%) translateY(-8px);
+                background-color: #1a1a1a;
+                color: #f5f5f5;
+                padding: 6px 14px;
+                border-radius: 8px;
+                font-size: 13px;
+                font-weight: 400;
+                letter-spacing: -0.01em;
                 opacity: 0;
                 visibility: hidden;
                 transition: all 0.3s ease;
                 white-space: nowrap;
-                box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
                 z-index: 100;
                 text-align: center;
-                min-width: 150px; /* Ensures a minimum width for the message */
+                min-width: 150px;
               }
-              
-              /* Add small triangle pointer to the message box */
+
               .hover-message:after {
                 content: '';
                 position: absolute;
-                top: -10px;
+                top: -8px;
                 left: 50%;
-                margin-left: -5px;
-                border-width: 5px;
+                margin-left: -4px;
+                border-width: 4px;
                 border-style: solid;
-                border-color: transparent transparent #333 transparent;
+                border-color: transparent transparent #1a1a1a transparent;
               }
-              
+
               .image-hover-container:hover .original-image {
                 opacity: 0;
               }
-              
+
               .image-hover-container:hover .hover-image {
                 opacity: 1;
               }
-              
+
               .image-hover-container:hover .hover-message {
                 opacity: 1;
                 visibility: visible;
                 transform: translateX(-50%) translateY(0);
               }
-              
-              /* New styles for text hover effect */
+
               .text-hover-container {
                 position: relative;
                 display: inline-block;
                 cursor: pointer;
                 color: inherit;
-                text-decoration: underline dotted;
+                text-decoration: underline;
+                text-decoration-style: dotted;
+                text-decoration-color: rgba(0, 0, 0, 0.25);
+                text-underline-offset: 3px;
               }
-              
+
               .text-hover-message {
                 position: absolute;
                 bottom: 100%;
                 left: 50%;
-                transform: translateX(-50%) translateY(10px);
-                background-color: #333;
-                color: white;
-                padding: 8px 12px;
-                border-radius: 6px;
-                font-size: 14px;
+                transform: translateX(-50%) translateY(8px);
+                background-color: #1a1a1a;
+                color: #f5f5f5;
+                padding: 6px 14px;
+                border-radius: 8px;
+                font-size: 13px;
+                font-weight: 400;
+                letter-spacing: -0.01em;
                 opacity: 0;
                 visibility: hidden;
                 transition: all 0.3s ease;
                 white-space: nowrap;
-                box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
                 z-index: 100;
                 text-align: center;
                 min-width: 150px;
                 margin-bottom: 5px;
               }
-              
-              /* Add small triangle pointer to the text message box */
+
               .text-hover-message:after {
                 content: '';
                 position: absolute;
-                bottom: -10px;
+                bottom: -8px;
                 left: 50%;
-                margin-left: -5px;
-                border-width: 5px;
+                margin-left: -4px;
+                border-width: 4px;
                 border-style: solid;
-                border-color: #333 transparent transparent transparent;
+                border-color: #1a1a1a transparent transparent transparent;
               }
-              
+
               .text-hover-container:hover .text-hover-message {
                 opacity: 1;
                 visibility: visible;
@@ -235,7 +239,7 @@
           </tr>
         </tbody></table>
         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-          <heading>Publications & Preprints (* means equal contribution)</heading>
+          <heading>Selected Publications (* means equal contribution)</heading>
           <tr>
             <td style="padding:20px;width:25%;vertical-align:middle">
               <img src="SFTvsRL/assets/teaser_v3.jpg" alt="PontTuset" width="160" style="border-style: none">
@@ -254,7 +258,7 @@
               <a href="https://people.eecs.berkeley.edu/~svlevine/">Sergey Levine</a>, 
               <a href="http://people.eecs.berkeley.edu/~yima/">Yi Ma</a>
               <br>
-              <em>ICML 2025</em>
+              <em>ICML 2025</em> &nbsp; <a href="https://www.paperdigest.org/2025/09/most-influential-icml-papers-2025-09-version/" style="color:#e74c3c; font-weight:bold;">(#3 Most Influential)</a>
               <br>
               <a href="https://tianzhechu.com/SFTvsRL">project page</a> / <a href="https://github.com/LeslieTrue/SFTvsRL">code</a> / <a href="https://arxiv.org/abs/2501.17161v1">arxiv</a>
               <br>
@@ -281,7 +285,7 @@
               <a href="https://scholar.google.com.sg/citations?user=fe-1v0MAAAAJ">Shenghua Gao</a>, 
               <a href="http://people.eecs.berkeley.edu/~yima/">Yi Ma</a>
               <br>
-              <em>Preprint</em>
+              <em>Accepted by AAAI 2026</em>
               <br>
               <a href="https://danielchyeh.github.io/All-Angles-Bench/">project page</a> / <a href="https://huggingface.co/datasets/ch-chenyu/All-Angles-Bench">bench</a> / <a href="https://arxiv.org/abs/2504.152801">arxiv</a>
               <br>
