@@ -1,1 +1,19 @@
-This is the source code to Jon Barron's public academic website: https://jonbarron.info/. You are welcome to clone this code for your own personal use, just please attribute the source to the original website or to this repo. If you do clone this website, feel free to add an attribution link to your own downstream website in index.html if you want.
+# Tianzhe Chu Website
+
+Personal academic website built with Vite and TypeScript, deployed to GitHub Pages.
+
+## Development
+
+```sh
+npm install
+npm run dev
+```
+
+## Build
+
+```sh
+npm run build
+npm run preview
+```
+
+Static subpages and public assets live under `public/` so their deployed URLs stay stable.
