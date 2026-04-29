@@ -26,19 +26,14 @@ body {
 }
 
 a {
-  color: #1a1a1a;
-  text-decoration: underline;
-  text-decoration-color: rgba(0, 0, 0, 0.2);
-  text-underline-offset: 3px;
-  transition:
-    color 0.15s ease,
-    text-decoration-color 0.15s ease;
+  color: #6C8EBF;
+  text-decoration: none;
+  transition: color 0.15s ease;
 }
 
 a:focus,
 a:hover {
-  color: #000;
-  text-decoration-color: rgba(0, 0, 0, 0.8);
+  color: #5a7aa8;
 }
 
 p {
