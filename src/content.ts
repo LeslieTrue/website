@@ -31,7 +31,7 @@ export const profile = {
     },
     { label: "Github", href: "https://github.com/LeslieTrue" },
     { label: "Twitter", href: "https://www.twitter.com/TianzheC" },
-    { label: "Photos", href: "/photos/" },
+    { label: "Photos", href: "https://tianzhechu.notion.site/photos" },
   ] satisfies Link[],
 };
 
@@ -218,5 +218,5 @@ export const serviceItems = [
 ];
 
 export const miscHtml = [
-  `I occasionally share photos <a href="/photos/">here</a>.`,
+  `I occasionally share photos <a href="https://tianzhechu.notion.site/photos">here</a>.`,
 ];
