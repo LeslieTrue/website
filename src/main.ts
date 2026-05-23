@@ -18,7 +18,7 @@ if (!app) {
 }
 
 const joinLinks = (links: Link[]): string =>
-  links.map((link) => `<a href="${link.href}">${link.label}</a>`).join(" <span class=\"sep\">/</span> ");
+  links.map((link) => `<a href="${link.href}">${link.label}</a>`).join(" <span class=\"sep\">&middot;</span> ");
 
 const renderProfileLinks = (links: Link[]): string =>
   links.map((link) => `<a href="${link.href}">${link.label}</a>`).join(" <span class=\"sep\">&middot;</span> ");

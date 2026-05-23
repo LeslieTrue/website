@@ -39,6 +39,10 @@ export const researchHtml = `My research interests broadly lie in discovering sc
 
 export const news: NewsItem[] = [
   {
+    date: "May 2026",
+    html: `New preprint on <a href="https://arxiv.org/abs/2605.18727">benchmarking dex hand policies and embodied agents</a>.`,
+  },
+  {
     date: "Dec 2025",
     html: `New blog post on <a href="https://gaussmath.ai/eval.html">eval llm-as-a-judge</a>.`,
   },
@@ -81,10 +85,22 @@ export const selectedProjects: Publication[] = [
     ],
   },
   {
+    title: "DexHoldem: Playing Texas Hold'em with Dexterous Embodied System",
+    href: "https://arxiv.org/abs/2605.18727",
+    authorsHtml:
+      `<a href="https://winniechen2002.github.io/">Feng Chen*</a>, <strong>Tianzhe Chu*</strong>, <a href="https://lisunphil.github.io/">Li Sun*</a>, <a href="https://github.com/PeiZhou26">Pei Zhou*</a>, Zhuxiu Xu, <a href="https://datascience.hku.hk/people/shenghua-gao/">Shenghua Gao</a>, <a href="https://yx-s-z.github.io/">Yuexiang Zhai</a>, <a href="https://yanchaoyang.github.io/">Yanchao Yang</a>, <a href="http://people.eecs.berkeley.edu/~yima/">Yi Ma</a>`,
+    venueHtml: "<em>Preprint, 2026</em>",
+    links: [
+      { label: "project page", href: "https://dexholdem.github.io/Dexholdem/" },
+      { label: "code", href: "https://github.com/DexHoldem" },
+      { label: "arxiv", href: "https://arxiv.org/abs/2605.18727" },
+    ],
+  },
+  {
     title: "GAUSS Eval: Human-LLM Judge Consistency Analysis",
     href: "https://gaussmath.ai/eval.html",
     authorsHtml:
-      "<strong>Tianzhe Chu*</strong>, Jiaxin Zhang*, Zhenyu Liao, Qiuyu Ren, Tahsin Saffat, Zitong Yang, Yi Ma, Yue Zhang*",
+      `<strong>Tianzhe Chu*</strong>, <a href="https://jiaxinzhang2.github.io/">Jiaxin Zhang*</a>, Zhenyu Liao, <a href="https://math.berkeley.edu/~qiuyu/">Qiuyu Ren</a>, Tahsin Saffat, <a href="https://zitongyang.github.io/">Zitong Yang</a>, <a href="http://people.eecs.berkeley.edu/~yima/">Yi Ma</a>, Yue Zhang*`,
     venueHtml: "<em>Blog Post, 2025</em>",
     links: [
       { label: "blog", href: "https://gaussmath.ai/eval.html" },
@@ -117,6 +133,18 @@ export const selectedProjects: Publication[] = [
 
 export const publications: Publication[] = [
   {
+    title: "DexHoldem: Playing Texas Hold'em with Dexterous Embodied System",
+    href: "https://arxiv.org/abs/2605.18727",
+    authorsHtml:
+      `<a href="https://winniechen2002.github.io/">Feng Chen*</a>, <strong>Tianzhe Chu*</strong>, <a href="https://lisunphil.github.io/">Li Sun*</a>, <a href="https://github.com/PeiZhou26">Pei Zhou*</a>, Zhuxiu Xu, <a href="https://datascience.hku.hk/people/shenghua-gao/">Shenghua Gao</a>, <a href="https://yx-s-z.github.io/">Yuexiang Zhai</a>, <a href="https://yanchaoyang.github.io/">Yanchao Yang</a>, <a href="http://people.eecs.berkeley.edu/~yima/">Yi Ma</a>`,
+    venueHtml: "<em>Preprint, 2026</em>",
+    links: [
+      { label: "project page", href: "https://dexholdem.github.io/Dexholdem/" },
+      { label: "code", href: "https://github.com/DexHoldem" },
+      { label: "arxiv", href: "https://arxiv.org/abs/2605.18727" },
+    ],
+  },
+  {
     title: "SFT Memorizes, RL Generalizes: A Comparative Study of Foundation Model Post-training",
     href: "https://arxiv.org/abs/2501.17161v1",
     authorsHtml: `<strong>Tianzhe Chu*</strong>, <a href="https://yx-s-z.github.io/">Yuexiang Zhai*</a>, <a href="https://jihanyang.github.io/">Jihan Yang</a>, <a href="https://tsb0601.github.io/petertongsb/">Shengbang Tong</a>, <a href="https://www.sainingxie.com/">Saining Xie</a>, <a href="https://webdocs.cs.ualberta.ca/~dale/">Dale Schuurmans</a>, <a href="https://cs.stanford.edu/~quocle/">Quoc V. Le</a>, <a href="https://people.eecs.berkeley.edu/~svlevine/">Sergey Levine</a>, <a href="http://people.eecs.berkeley.edu/~yima/">Yi Ma</a>`,
@@ -140,7 +168,7 @@ export const publications: Publication[] = [
   {
     title: "Seeing from Another Perspective: Evaluating Multi-View Understanding in MLLMs",
     href: "https://arxiv.org/abs/2504.15280",
-    authorsHtml: `<a href="https://danielchyeh.github.io/">Chun-Hsiao Yeh*</a>, <a href="https://scholar.google.com/citations?hl=en&user=ZkCLeicAAAAJ">Chenyu Wang*</a>, <a href="https://tsb0601.github.io/petertongsb/">Shengbang Tong</a>, <a href="https://ttchengab.github.io/">Ta-Ying Cheng</a>, <a href="https://scholar.google.com/citations?user=V5H0P28AAAAJ">Ruoyu Wang</a>, <strong>Tianzhe Chu</strong>, <a href="https://yx-s-z.github.io/">Yuexiang Zhai</a>, <a href="https://yubeichen.com/">Yubei Chen</a>, <a href="https://scholar.google.com.sg/citations?user=fe-1v0MAAAAJ">Shenghua Gao</a>, <a href="http://people.eecs.berkeley.edu/~yima/">Yi Ma</a>`,
+    authorsHtml: `<a href="https://danielchyeh.github.io/">Chun-Hsiao Yeh*</a>, <a href="https://scholar.google.com/citations?hl=en&user=ZkCLeicAAAAJ">Chenyu Wang*</a>, <a href="https://tsb0601.github.io/petertongsb/">Shengbang Tong</a>, <a href="https://ttchengab.github.io/">Ta-Ying Cheng</a>, <a href="https://scholar.google.com/citations?user=V5H0P28AAAAJ">Ruoyu Wang</a>, <strong>Tianzhe Chu</strong>, <a href="https://yx-s-z.github.io/">Yuexiang Zhai</a>, <a href="https://yubeichen.com/">Yubei Chen</a>, <a href="https://datascience.hku.hk/people/shenghua-gao/">Shenghua Gao</a>, <a href="http://people.eecs.berkeley.edu/~yima/">Yi Ma</a>`,
     venueHtml: "<em>AAAI 2026</em>",
     links: [
       { label: "project page", href: "https://danielchyeh.github.io/All-Angles-Bench/" },
@@ -152,7 +180,7 @@ export const publications: Publication[] = [
     title: "Emergence of Segmentation with Minimalistic White-Box Transformers",
     href: "https://arxiv.org/abs/2308.16271",
     authorsHtml: `<a href="https://yaodongyu.github.io/">Yaodong Yu*</a>, <strong>Tianzhe Chu*</strong>, <a href="https://tsb0601.github.io/petertongsb/">Shengbang Tong</a>, <a href="https://robinwu218.github.io/">Ziyang Wu</a>, <a href="https://druvpai.github.io/">Druv Pai</a>, <a href="https://sdbuchanan.com/">Sam Buchanan</a>, <a href="http://people.eecs.berkeley.edu/~yima/">Yi Ma</a>`,
-    venueHtml: "<em>Accepted by CPAL 2024(Oral), NeurIPS 2023 XAI Workshop(Oral)(4 out of 59 accepted papers)</em>",
+    venueHtml: "<em>CPAL 2024(Oral), NeurIPS 2023 XAI Workshop(Oral)</em>",
     links: [
       { label: "demo", href: "https://colab.research.google.com/drive/1rYn_NlepyW7Fu5LDliyBDmFZylHco7ss?usp=sharing" },
       { label: "project page", href: "https://ma-lab-berkeley.github.io/CRATE/" },
@@ -175,7 +203,7 @@ export const publications: Publication[] = [
     title: "Image Clustering via the Principle of Rate Reduction in the Age of Pretrained Models",
     href: "https://arxiv.org/abs/2306.05272",
     authorsHtml: `<strong>Tianzhe Chu*</strong>, <a href="https://tsb0601.github.io/petertongsb/">Shengbang Tong*</a>, <a href="https://tianjiaoding.com/">Tianjiao Ding*</a>, <a href="https://delay-xili.github.io/">Xili Dai</a>, <a href="https://www.cis.jhu.edu/~haeffele/">Benjamin D. Haeffele</a>, <a href="http://vision.jhu.edu/rvidal.html">René Vidal</a>, <a href="http://people.eecs.berkeley.edu/~yima/">Yi Ma</a>`,
-    venueHtml: "<em>Accepted by ICLR 2024</em>",
+    venueHtml: "<em>ICLR 2024</em>",
     links: [
       { label: "code", href: "https://github.com/LeslieTrue/CPP" },
       { label: "arxiv", href: "https://arxiv.org/abs/2306.05272" },
@@ -184,7 +212,7 @@ export const publications: Publication[] = [
   {
     title: "GenDexHand: Generative Simulation for Dexterous Hands",
     href: "https://arxiv.org/abs/2511.01791",
-    authorsHtml: "Feng Chen, Zhuxiu Xu, <strong>Tianzhe Chu</strong>, Xunzhe Zhou, Li Sun, Zewen Wu, Shenghua Gao, Zhongyu Li, Yanchao Yang, Yi Ma",
+    authorsHtml: `<a href="https://winniechen2002.github.io/">Feng Chen*</a>, Zhuxiu Xu*, <strong>Tianzhe Chu</strong>, <a href="https://zhouxunzhe.github.io/">Xunzhe Zhou</a>, <a href="https://lisunphil.github.io/">Li Sun</a>, Zewen Wu, <a href="https://datascience.hku.hk/people/shenghua-gao/">Shenghua Gao</a>, <a href="https://zyliatzju.github.io/">Zhongyu Li</a>, <a href="https://yanchaoyang.github.io/">Yanchao Yang</a>, <a href="http://people.eecs.berkeley.edu/~yima/">Yi Ma</a>`,
     venueHtml: "<em>Preprint, 2025</em>",
     links: [
       { label: "project page", href: "https://winniechen2002.github.io/GenDexHand/" },
@@ -194,15 +222,18 @@ export const publications: Publication[] = [
   {
     title: "Pointer-CAD: Unifying B-Rep and Command Sequences via Pointer-based Edges & Faces Selection",
     href: "https://arxiv.org/abs/2603.04337",
-    authorsHtml: "Dacheng Qi, Chenyu Wang, Jingwei Xu, <strong>Tianzhe Chu</strong>, Zibo Zhao, Wen Liu, Wenrui Ding, Yi Ma, Shenghua Gao",
+    authorsHtml: `Dacheng Qi*, Chenyu Wang*, Jingwei Xu, <strong>Tianzhe Chu</strong>, Zibo Zhao, Wen Liu, Wenrui Ding, <a href="http://people.eecs.berkeley.edu/~yima/">Yi Ma</a>, <a href="https://datascience.hku.hk/people/shenghua-gao/">Shenghua Gao</a>`,
     venueHtml: "<em>CVPR 2026</em>",
-    links: [{ label: "arxiv", href: "https://arxiv.org/abs/2603.04337" }],
+    links: [
+      { label: "project page", href: "https://snitro.github.io/Pointer-CAD-Page/" },
+      { label: "arxiv", href: "https://arxiv.org/abs/2603.04337" },
+    ],
   },
   {
     title: "GAUSS Eval: Human-LLM Judge Consistency Analysis",
     href: "https://gaussmath.ai/eval.html",
     authorsHtml:
-      "<strong>Tianzhe Chu*</strong>, Jiaxin Zhang*, Zhenyu Liao, Qiuyu Ren, Tahsin Saffat, Zitong Yang, Yi Ma, Yue Zhang*",
+      `<strong>Tianzhe Chu*</strong>, <a href="https://jiaxinzhang2.github.io/">Jiaxin Zhang*</a>, Zhenyu Liao, <a href="https://math.berkeley.edu/~qiuyu/">Qiuyu Ren</a>, Tahsin Saffat, <a href="https://zitongyang.github.io/">Zitong Yang</a>, <a href="http://people.eecs.berkeley.edu/~yima/">Yi Ma</a>, Yue Zhang*`,
     venueHtml: "<em>Blog Post, 2025</em>",
     links: [
       { label: "blog", href: "https://gaussmath.ai/eval.html" },
