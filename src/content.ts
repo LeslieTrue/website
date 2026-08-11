@@ -39,6 +39,10 @@ export const researchHtml = `My research interests broadly lie in discovering sc
 
 export const news: NewsItem[] = [
   {
+    date: "Aug 2026",
+    html: `Starting my first internship at <a href="https://amilabs.xyz/">AMI</a>.`,
+  },
+  {
     date: "May 2026",
     html: `New preprint on <a href="https://arxiv.org/abs/2605.18727">benchmarking dex hand policies and embodied agents</a>.`,
   },
