@@ -21,7 +21,7 @@ export const profile = {
   email: "mailto:tianzhechu@gmail.com",
   resume: "/data/resume_ctz.pdf",
   primaryImage: "/images/me.jpg",
-  introHtml: `I'm a 2nd year Ph.D student at HKU IDS advised by Prof. <a href="http://people.eecs.berkeley.edu/~yima/">Yi Ma</a>. Before that, I obtained B.Eng. in Computer Science (Honor) from ShanghaiTech University. I started my research journey at <span class="text-hover-container">Berkeley<span class="text-hover-message">trained to be a cook there</span></span> also with Yi. I am from Suzhou and love to <span class="text-hover-container">season my dishes with sweet<span class="text-hover-message">Opposite cooking philosophy easily gets me pissed :/</span></span>.`,
+  introHtml: `I'm a 3rd year Ph.D student at HKU IDS advised by Prof. <a href="http://people.eecs.berkeley.edu/~yima/">Yi Ma</a>. Before that, I obtained B.Eng. in Computer Science (Honor) from ShanghaiTech University. I started my research journey at <span class="text-hover-container">Berkeley<span class="text-hover-message">trained to be a cook there</span></span> also with Yi. I am from Suzhou and love to <span class="text-hover-container">season my dishes with sweet<span class="text-hover-message">Opposite cooking philosophy easily gets me pissed :/</span></span>.`,
   links: [
     { label: "Email", href: "mailto:tianzhechu@gmail.com" },
     { label: "Resume", href: "/data/resume_ctz.pdf" },
@@ -77,40 +77,20 @@ export const news: NewsItem[] = [
   },
 ];
 
+const nestor: Publication = {
+  title: "Nested Sparsity for Scalable Pretraining and Continual Learning",
+  href: "https://arxiv.org/abs/2610.31818",
+  authorsHtml: `<strong>Tianzhe Chu*</strong>, <a href="https://druvpai.github.io/">Druv Pai*</a>, <a href="http://people.eecs.berkeley.edu/~yima/">Yi Ma</a>`,
+  venueHtml: "<em>Preprint, 2026</em>",
+  links: [
+    { label: "project page", href: "https://ma-lab-berkeley.github.io/Nestor/" },
+    { label: "code", href: "https://github.com/Ma-Lab-Berkeley/Nestor" },
+    { label: "arxiv", href: "https://arxiv.org/abs/2610.31818" },
+  ],
+};
+
 export const selectedProjects: Publication[] = [
-  {
-    title: "Learning Deep Representations of Data Distributions",
-    href: "https://ma-lab-berkeley.github.io/deep-representation-learning-book/",
-    authorsHtml: "Ma Lab Berkeley",
-    venueHtml: "<em>Open-Source Textbook with AI Tooling</em>",
-    links: [
-      { label: "book", href: "https://ma-lab-berkeley.github.io/deep-representation-learning-book/" },
-      { label: "AI helpers", href: "https://ma-lab-berkeley.github.io/deep-representation-learning-book/ai_helpers.html" },
-    ],
-  },
-  {
-    title: "DexHoldem: Playing Texas Hold'em with Dexterous Embodied System",
-    href: "https://arxiv.org/abs/2605.18727",
-    authorsHtml:
-      `<a href="https://winniechen2002.github.io/">Feng Chen*</a>, <strong>Tianzhe Chu*</strong>, <a href="https://lisunphil.github.io/">Li Sun*</a>, <a href="https://github.com/PeiZhou26">Pei Zhou*</a>, Zhuxiu Xu, <a href="https://datascience.hku.hk/people/shenghua-gao/">Shenghua Gao</a>, <a href="https://yx-s-z.github.io/">Yuexiang Zhai</a>, <a href="https://yanchaoyang.github.io/">Yanchao Yang</a>, <a href="http://people.eecs.berkeley.edu/~yima/">Yi Ma</a>`,
-    venueHtml: "<em>Preprint, 2026</em>",
-    links: [
-      { label: "project page", href: "https://dexholdem.github.io/Dexholdem/" },
-      { label: "code", href: "https://github.com/DexHoldem" },
-      { label: "arxiv", href: "https://arxiv.org/abs/2605.18727" },
-    ],
-  },
-  {
-    title: "GAUSS Eval: Human-LLM Judge Consistency Analysis",
-    href: "https://gaussmath.ai/eval.html",
-    authorsHtml:
-      `<strong>Tianzhe Chu*</strong>, <a href="https://jiaxinzhang2.github.io/">Jiaxin Zhang*</a>, Zhenyu Liao, <a href="https://math.berkeley.edu/~qiuyu/">Qiuyu Ren</a>, Tahsin Saffat, <a href="https://zitongyang.github.io/">Zitong Yang</a>, <a href="http://people.eecs.berkeley.edu/~yima/">Yi Ma</a>, Yue Zhang*`,
-    venueHtml: "<em>Blog Post, 2025</em>",
-    links: [
-      { label: "blog", href: "https://gaussmath.ai/eval.html" },
-      { label: "report", href: "https://gaussmath.ai/assets/eval.pdf" },
-    ],
-  },
+  nestor,
   {
     title: "SFT Memorizes, RL Generalizes",
     href: "https://arxiv.org/abs/2501.17161v1",
@@ -136,6 +116,7 @@ export const selectedProjects: Publication[] = [
 ];
 
 export const publications: Publication[] = [
+  nestor,
   {
     title: "DexHoldem: Playing Texas Hold'em with Dexterous Embodied System",
     href: "https://arxiv.org/abs/2605.18727",
