@@ -1,0 +1,112 @@
+/* Equation and illustration layout specific to the scaling article. */
+.variable-definitions var {
+  font-style: normal;
+}
+
+.scaling-equation {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0 0.4em;
+  margin: 1.5rem 0;
+  color: var(--ink);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.1rem, 3vw, 1.4rem);
+}
+
+.variables-figure {
+  margin: 1.75rem 0 2rem;
+}
+
+.variables-figure__link {
+  display: block;
+  width: min(100%, 620px);
+  cursor: zoom-in;
+}
+
+.variables-figure__link:focus-visible {
+  outline: 2px solid var(--accent-ink);
+  outline-offset: 6px;
+}
+
+.variables-figure figcaption {
+  max-width: 520px;
+  text-align: center;
+}
+
+.section-status span {
+  display: inline-block;
+  padding: 0.2rem 0.65rem;
+  border: 1px solid #d8cbb2;
+  border-radius: 999px;
+  background: #f7f3e9;
+  color: #776444;
+  font-size: 0.75rem;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.math {
+  font-family: Georgia, "Times New Roman", serif;
+  white-space: nowrap;
+}
+
+.math.math-wrap {
+  white-space: normal;
+}
+
+.compute-equation {
+  margin: 1.5rem 0;
+  text-align: center;
+  color: var(--ink);
+  font-size: clamp(1.1rem, 3vw, 1.35rem);
+}
+
+.compute-subheading {
+  margin: 2rem 0 0.7rem;
+  color: var(--ink);
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.compute-table-wrap {
+  margin: 1.25rem 0;
+  overflow-x: auto;
+}
+
+.compute-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+  text-align: left;
+}
+
+.compute-table caption {
+  caption-side: bottom;
+  padding-top: 0.65rem;
+  color: var(--muted);
+  font-size: 0.8rem;
+  text-align: left;
+}
+
+.compute-table th,
+.compute-table td {
+  padding: 0.6rem 0.7rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.compute-table th {
+  font-weight: 500;
+  color: var(--ink);
+}
+
+.compute-table thead {
+  background: var(--bg-soft);
+}
+
+.compute-figure .figure__surface a {
+  display: block;
+  width: 100%;
+  cursor: zoom-in;
+}

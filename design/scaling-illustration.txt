@@ -1,0 +1,11 @@
+Generation: built-in image_gen, requested GPT Image 2.
+Asset: public/blogs/scaling/assets/experimental-variables-pencil.png
+
+Use case: scientific-educational.
+Asset type: one polished inline illustration for an academic blog about careful scaling experiments. Generate with GPT Image 2.
+Primary request: an elegant, understated pencil-hand-drawn diagram of five experimental variables, replacing an ugly stock SVG Venn diagram.
+Composition: landscape canvas, approximately 3:2, with a compact beautifully balanced drawing filling the canvas with modest white margins. On the left, two small separate hand-drawn circles stacked vertically, labelled exactly "Hparams" and "Data". On the right, a larger group of three overlapping hand-drawn circles in a triangular arrangement: upper left "Compute", upper right "Wall time", lower center "Model capacity" (two lines allowed). These are the only five circles. Labels placed in the outer non-overlapping lobes, clearly readable and generous size. The three overlapping circles suggest quantities that change together, not mathematical set membership. Left circles do not overlap anything. The left pair and the right group align as one thoughtful composition.
+Style/medium: real graphite pencil drawing with delicate slightly imperfect outlines, finely visible pencil grain, sparse cross-hatching and gentle colored-pencil shading. Refined research notebook sketch, calm and minimal, no doodle clutter. Dark graphite neat hand-lettered labels, not cursive. Pure white paper background that merges into a white webpage; no beige rectangle, paper edges or heavy texture.
+Color palette: very desaturated pale slate blue for Compute, pale sage grey for Wall time, and pale warm oatmeal for Model capacity; neutral warm grey for Hparams and Data. White dominates. Overlaps remain airy and lightly shaded, never dark or muddy.
+Text verbatim: "Hparams", "Data", "Compute", "Wall time", "Model capacity". No other text.
+Avoid: saturated colors, gradients, vector-perfect circles, UI cards, drop shadows, icons, arrows, charts, decorations, titles, watermark, desk objects, pencils in frame.

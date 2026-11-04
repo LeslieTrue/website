@@ -17,6 +17,10 @@
     <priority>0.80</priority>
   </url>
   <url>
+    <loc>https://tianzhechu.com/blogs/scaling/</loc>
+    <priority>0.80</priority>
+  </url>
+  <url>
     <loc>https://tianzhechu.com/musicreview/music.html</loc>
     <priority>0.50</priority>
   </url>

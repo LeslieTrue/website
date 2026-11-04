@@ -1,0 +1,44 @@
+{
+  "layers": 12,
+  "width": 1024,
+  "body_parameters": 150994944,
+  "total_training_tokens": 1000000000,
+  "rows": [
+    {
+      "sequence_length": 1024,
+      "six_nd": 905969664000000000,
+      "with_full_square_attention": 1056964608000000000,
+      "with_ideal_causal_attention": 981540864000000000
+    },
+    {
+      "sequence_length": 2048,
+      "six_nd": 905969664000000000,
+      "with_full_square_attention": 1207959552000000000,
+      "with_ideal_causal_attention": 1057038336000000000
+    },
+    {
+      "sequence_length": 4096,
+      "six_nd": 905969664000000000,
+      "with_full_square_attention": 1509949440000000000,
+      "with_ideal_causal_attention": 1208033280000000000
+    },
+    {
+      "sequence_length": 8192,
+      "six_nd": 905969664000000000,
+      "with_full_square_attention": 2113929216000000000,
+      "with_ideal_causal_attention": 1510023168000000000
+    },
+    {
+      "sequence_length": 16384,
+      "six_nd": 905969664000000000,
+      "with_full_square_attention": 3321888768000000000,
+      "with_ideal_causal_attention": 2114002944000000000
+    },
+    {
+      "sequence_length": 32768,
+      "six_nd": 905969664000000000,
+      "with_full_square_attention": 5737807872000000000,
+      "with_ideal_causal_attention": 3321962496000000000
+    }
+  ]
+}
