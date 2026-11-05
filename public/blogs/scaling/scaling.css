@@ -283,3 +283,20 @@
 .toc__number.check-marker {
   margin-top: 0.2em;
 }
+
+.hero__meta-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 1.4rem;
+}
+
+.hero__meta-row .hero__meta {
+  margin: 0;
+}
+
+.hero__meta--authorship {
+  background: #fff0df;
+  color: #a64b12;
+}
