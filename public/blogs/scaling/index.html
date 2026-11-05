@@ -147,8 +147,12 @@
               <p class="definition__title" id="research-score">Definition 3</p>
               <p>cost-effective research score = impact / (<span class="math">λ<sub>ice</sub> × GPU hrs</span>), where GPU hrs counts only the experiments actually kept in the main paper, and <span class="math">λ<sub>ice</sub> ≥ 1</span> is your iceberg multiplier — the ratio of total GPU hrs (including all the runs you dropped or hid) to the ones in the paper.</p>
             </div>
-            <p>Your goal should be optimizing this metric instead of optimizing impact alone while overlooking the burnt GPU hrs. Some references for what high scores look like:</p>
-            <p>ResNet [TBD]<br />Transformers [TBD]</p>
+            <p>Your goal should be optimizing this metric instead of optimizing impact alone while overlooking the burnt GPU hrs. For a rough compute-cost illustration, use the following H200-equivalent estimates for the experiments in the papers and assume <span class="math">λ<sub>ice</sub> = 100</span>:</p>
+            <ul>
+              <li><strong>ResNet:</strong> 70 × 100 ≈ <strong>7,000 H200 GPU hrs</strong> in total.</li>
+              <li><strong>Transformer:</strong> 210 × 100 ≈ <strong>21,000 H200 GPU hrs</strong> in total.</li>
+            </ul>
+            <p>These are illustrative estimates, not measured totals for the original research projects.</p>
             <h3 id="smallest-experiment">What's your smallest exp GPU hr requirement?</h3>
             <p>Say your group has <var>K</var> GPUs with <var>m</var> active users. Your fair share is <span class="math">K/m</span>. A reasonable smallest exp should take <span class="math">≤ K/m × 1/4</span> GPUs and finish within one day, leaving you room for enough sweeping. From there, follow a strict promotion rule: escalate part of your successful exps to <span class="math">1/2 × K/m</span> GPUs → <span class="math">K/m</span> GPUs → ask your advisor to use more than fair share → ask me or Yi for a temporary extra quota.</p>
             <h3 id="current-mfu">What's your current <span class="hover-note" tabindex="0" data-hover="Model FLOPs utilization (MFU): achieved model FLOPs per second divided by the accelerators’ combined theoretical peak FLOPs per second at the training precision. Counts the model’s forward and backward computation, excluding activation recomputation.">MFU</span> number?</h3>
