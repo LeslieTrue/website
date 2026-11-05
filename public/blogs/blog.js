@@ -19,7 +19,10 @@
     const parents = [];
     section.querySelectorAll("h2, h3, h4").forEach((heading) => {
       const level = Number(heading.tagName.slice(1)) - 2;
-      const label = heading.textContent.trim();
+      const labelNode = heading.cloneNode(true);
+      labelNode.querySelectorAll(".cite").forEach((cite) => cite.remove());
+      const label = labelNode.textContent.trim();
+      const isChecklist = section.hasAttribute("data-checklist") && level > 0;
       if (level > 0) counters[level] += 1;
       counters.fill(0, level + 1);
       const number = counters.slice(0, level + 1).join(".");
@@ -33,8 +36,9 @@
       }
       const target = level === 0 ? section.id : heading.id;
       const prefix = document.createElement("span");
-      prefix.className = "heading-number";
-      prefix.textContent = number;
+      prefix.className = isChecklist ? "check-marker" : "heading-number";
+      prefix.textContent = isChecklist ? "✓" : number;
+      if (isChecklist) prefix.setAttribute("aria-hidden", "true");
       heading.prepend(prefix, document.createTextNode(" "));
 
       const item = document.createElement("li");
@@ -42,8 +46,9 @@
       const link = document.createElement("a");
       link.href = `#${target}`;
       const index = document.createElement("span");
-      index.className = "toc__number";
-      index.textContent = number;
+      index.className = isChecklist ? "toc__number check-marker" : "toc__number";
+      index.textContent = isChecklist ? "✓" : number;
+      if (isChecklist) index.setAttribute("aria-hidden", "true");
       const title = document.createElement("span");
       title.textContent = label;
       link.append(index, document.createTextNode(" "), title);

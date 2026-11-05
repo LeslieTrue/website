@@ -253,3 +253,33 @@
   outline: 2px solid var(--accent);
   outline-offset: 3px;
 }
+
+.check-marker {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.15em;
+  height: 1.15em;
+  border: 1.5px solid var(--accent);
+  border-radius: 3px;
+  background: var(--accent-soft);
+  color: var(--accent-ink);
+  font-size: 0.85em;
+  font-weight: 600;
+  line-height: 1;
+}
+
+[data-checklist] h3 {
+  position: relative;
+  padding-left: 1.8em;
+}
+
+[data-checklist] h3 > .check-marker {
+  position: absolute;
+  left: 0;
+  top: 0.2em;
+}
+
+.toc__number.check-marker {
+  margin-top: 0.2em;
+}

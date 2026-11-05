@@ -42,7 +42,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="../blog.css" />
-    <link rel="stylesheet" href="./scaling.css?v=20261106-mfu-tooltip" />
+    <link rel="stylesheet" href="./scaling.css?v=20261106-checkmarks" />
   </head>
 
   <body>
@@ -139,7 +139,7 @@
             <h3 id="bottlenecks">Bottleneck may not be chips' compute</h3>
             <p>Bottleneck may not be chips especially for vision / robot folks. it maybe data loading, simulator rendering, etc; for RL guys, it maybe the speed of inference engine, RL algorithms, distribution of # training enginers and # inference engines. My panda 信誓旦旦 spoke "I cant run my exps without 32 h200s cuz it would be too slow" but the actual hidden reason for slowing is not the number of chips - used to random shuffle every time for each data sample and face some filelock issues when reading video data.</p>
           </section>
-          <section id="checklist" class="section" data-nav="Checklist">
+          <section id="checklist" class="section" data-nav="Checklist" data-checklist>
             <h2>Checklist before asking for chips</h2>
             <h3 id="project-value">Should you keep working on this project?</h3>
             <p>Let's propose a metric:</p>
@@ -157,6 +157,7 @@
             <p>Say your group has <var>K</var> GPUs with <var>m</var> active users. Your fair share is <span class="math">K/m</span>. A reasonable smallest exp should take <span class="math">≤ K/m × 1/4</span> GPUs and finish within one day, leaving you room for enough sweeping. From there, follow a strict promotion rule: escalate part of your successful exps to <span class="math">1/2 × K/m</span> GPUs → <span class="math">K/m</span> GPUs → ask your advisor to use more than fair share → ask me or Yi for a temporary extra quota.</p>
             <h3 id="current-mfu">What's your current <span class="hover-note" tabindex="0" data-hover="Model FLOPs utilization (MFU): achieved model FLOPs per second divided by the accelerators’ combined theoretical peak FLOPs per second at the training precision. Counts the model’s forward and backward computation, excluding activation recomputation.">MFU</span> number?</h3>
             <p>Is your bottleneck really the number of GPUs, or something else like what section 2 mentions?</p>
+            <h3 id="hyperparameters">Have you tuned your hparams to be optimal or applied μP <a class="cite" href="#ref-mup">[11]</a>?</h3>
             <h3 id="baseline-ladder">Have you run some smaller data points and shown your ladder beats the baseline?</h3>
             <h3 id="coordinate-jobs">Have you coordinated with group members to see if they have idle jobs that can be killed?</h3>
           </section>
@@ -177,6 +178,7 @@
               <li id="ref-comprehensive-moe">Zhao et al. (2025). <a href="https://arxiv.org/html/2509.23678#A7">Towards a Comprehensive Scaling Law of Mixture-of-Experts</a>. Appendix G: Compute-Optimality with Fixed Configurations.</li>
               <li id="ref-palm">Chowdhery et al. (2022). <a href="https://arxiv.org/html/2204.02311v5#S4.SS1">PaLM: Scaling Language Modeling with Pathways</a>. Section 4.1: Training Efficiency.</li>
               <li id="ref-matmul">NVIDIA. <a href="https://docs.nvidia.com/deeplearning/performance/dl-performance-matrix-multiplication/index.html">Matrix Multiplication Background</a>. Section 2.3: Typical Tile Dimensions in cuBLAS and Performance.</li>
+              <li id="ref-mup">Yang et al. (2022). <a href="https://arxiv.org/abs/2203.03466">Tensor Programs V: Tuning Large Neural Networks via Zero-Shot Hyperparameter Transfer</a>.</li>
             </ol>
           </section>
         </article>
@@ -187,6 +189,6 @@
       <p>© 2026 Tianzhe Chu · <a href="/">tianzhechu.com</a></p>
     </footer>
 
-    <script src="../blog.js?v=20261106-tooltips" defer></script>
+    <script src="../blog.js?v=20261106-checkmarks" defer></script>
   </body>
 </html>
