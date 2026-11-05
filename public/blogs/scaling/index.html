@@ -84,10 +84,10 @@
           </ul>
           <section id="science" class="section" data-nav="Science">
             <h2>Science part: what it is and why we want it</h2>
-            <p>There are many interesting lectures or notes on what a scaling ladder is and you may find details there []. Here I just want to briefly mention it — given a set of at least 4 exp logs with different compute budgets and from the same model family, you fit a curve</p>
+            <p>There are many interesting lectures or notes on what a scaling ladder is and you may find details there <a class="cite" href="#ref-scaling-post">[1]</a><a class="cite" href="#ref-cs336">[2]</a>. Here I just want to briefly mention it — given a set of at least 4 exp logs with different compute budgets and from the same model family, you fit a curve</p>
             <div class="compute-equation"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mi>L</mi><mo>(</mo><mi>c</mi><mo>)</mo><mo>=</mo><mi>A</mi><msup><mi>c</mi><mrow><mo>−</mo><mi>α</mi></mrow></msup><mo>+</mo><msub><mi>L</mi><mo>∞</mo></msub></math></div>
             <p>This curve can help do two things — 1. predict the larger scale perf that you cannot afford (or verify their perf if you can); 2. compare two model families’ scaling ladders to see which actually works better. This style of comparison gives some 不烧心 (peace of mind) before burning chips, cuz the training compute of any arch can be calculated in theory (or sometimes plus a small run for MFU estimation if you want the actual wall time as the x axis).</p>
-            <p>Inspired by Tatsu’s course at Stanford, I came up with another academia view on why we want it:</p>
+            <p>Inspired by Tatsu’s <em>Deep Learning Alchemy</em> course at Stanford <a class="cite" href="#ref-alchemy">[3]</a>, I came up with another academia view on why we want it:</p>
             <h3 id="phd-training">Scaling ladder as a structured prediction objective for PhD training</h3>
             <p>Let’s now think of this from an inverse view — say, instead of you training neural networks, actually the training experiment logs are training your brain.</p>
             <div class="definition" aria-labelledby="definition-one">
@@ -152,7 +152,15 @@
             <p>Is your bottleneck really the number of GPUs, or something else like what section 2 mentions?</p>
             <h3 id="baseline-ladder">Have you run some smaller data points and shown your ladder beats the baseline?</h3>
             <h3 id="coordinate-jobs">Have you coordinated with group members to see if they have idle jobs that can be killed?</h3>
-            <p>Sorry for any possible offence. Hope you have a happy research journey.</p>
+            <p>Hope you have a happy research journey.</p>
+          </section>
+          <section id="acknowledgement-conclusion" class="section" data-nav="Conclusion">
+            <h2>Acknowledgement &amp; Conclusion</h2>
+            <p>TBD</p>
+          </section>
+          <section id="references" class="section" data-nav="References">
+            <h2>References</h2>
+            <p><span id="ref-scaling-post">[1] <a href="https://x.com/purshow04/status/2117994165187531061">Post by @purshow04</a>.</span> <span id="ref-cs336">[2] <a href="https://github.com/stanford-cs336/lectures/blob/main/lecture_09.pdf">Stanford CS336 — Lecture 9 slides</a>.</span> <span id="ref-alchemy">[3] <a href="https://deep-learning-alchemy.github.io/">Stanford CS312 — Deep Learning Alchemy</a>.</span></p>
           </section>
         </article>
       </div>
