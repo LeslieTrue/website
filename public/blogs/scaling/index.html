@@ -42,7 +42,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="../blog.css" />
-    <link rel="stylesheet" href="./scaling.css?v=20261105-simple-definitions" />
+    <link rel="stylesheet" href="./scaling.css?v=20261105-checklist" />
   </head>
 
   <body>
@@ -85,20 +85,20 @@
           <section id="science" class="section" data-nav="Science">
             <h2>Science part: what it is and why we want it</h2>
             <p>There are many interesting lectures or notes on what a scaling ladder is and you may find details there []. Here I just want to briefly mention it — given a set of at least 4 exp logs with different compute budgets and from the same model family, you fit a curve</p>
-            <div class="compute-equation"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mi>L</mi><mo>(</mo><mi>C</mi><mo>)</mo><mo>=</mo><mi>A</mi><msup><mi>C</mi><mrow><mo>−</mo><mi>b</mi></mrow></msup><mo>+</mo><mi>E</mi></math></div>
+            <div class="compute-equation"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mi>L</mi><mo>(</mo><mi>c</mi><mo>)</mo><mo>=</mo><mi>A</mi><msup><mi>c</mi><mrow><mo>−</mo><mi>α</mi></mrow></msup><mo>+</mo><msub><mi>L</mi><mo>∞</mo></msub></math></div>
             <p>This curve can help do two things — 1. predict the larger scale perf that you cannot afford (or verify their perf if you can); 2. compare two model families’ scaling ladders to see which actually works better. This style of comparison gives some 不烧心 (peace of mind) before burning chips, cuz the training compute of any arch can be calculated in theory (or sometimes plus a small run for MFU estimation if you want the actual wall time as the x axis).</p>
             <p>Inspired by Tatsu’s course at Stanford, I came up with another academia view on why we want it:</p>
             <h3 id="phd-training">Scaling ladder as a structured prediction objective for PhD training</h3>
             <p>Let’s now think of this from an inverse view — say, instead of you training neural networks, actually the training experiment logs are training your brain.</p>
             <div class="definition" aria-labelledby="definition-one">
               <p class="definition__title" id="definition-one">Definition 1 <span>Predict one experiment</span></p>
-              <div class="definition__equation"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mi>P</mi><mo>=</mo><mi>f</mi><mo>(</mo><mi>D</mi><mo>,</mo><mi>H</mi><mo>,</mo><mi>C</mi><mo>)</mo></math><span class="definition__number">(1)</span></div>
-              <div class="definition__equation"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mtext>minimize</mtext><mspace width="0.5em"/><msup><mrow><mo>(</mo><mi>P</mi><mo>−</mo><mi>y</mi><mo>)</mo></mrow><mn>2</mn></msup></math><span class="definition__number">(2)</span></div>
+              <div class="definition__equation"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mi>p</mi><mo>=</mo><mi>f</mi><mo>(</mo><mi>d</mi><mo>,</mo><mi>h</mi><mo>,</mo><mi>c</mi><mo>)</mo></math><span class="definition__number">(1)</span></div>
+              <div class="definition__equation"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mtext>minimize</mtext><mspace width="0.5em"/><msup><mrow><mo>(</mo><mi>p</mi><mo>−</mo><mi>y</mi><mo>)</mo></mrow><mn>2</mn></msup></math><span class="definition__number">(2)</span></div>
               <dl class="definition__terms">
-                <div><dt><var>D</var></dt><dd>Data configuration.</dd></div>
-                <div><dt><var>H</var></dt><dd>Architecture and hyperparameters.</dd></div>
-                <div><dt><var>C</var></dt><dd>Training compute budget in FLOPs.</dd></div>
-                <div><dt><var>P</var>, <var>y</var></dt><dd>Predicted and measured performance.</dd></div>
+                <div><dt><var>d</var></dt><dd>Data configuration for one run, free to vary across experiments.</dd></div>
+                <div><dt><var>h</var></dt><dd>Architecture and hyperparameters for one run.</dd></div>
+                <div><dt><var>c</var></dt><dd>Training compute budget in FLOPs.</dd></div>
+                <div><dt><var>p</var>, <var>y</var></dt><dd>Predicted and measured performance.</dd></div>
                 <div><dt><var>f</var></dt><dd>Your mental predictor, improved by learning from experiment logs.</dd></div>
               </dl>
             </div>
@@ -109,18 +109,18 @@
             </div>
             <div class="definition" aria-labelledby="definition-two">
               <p class="definition__title" id="definition-two">Definition 2 <span>Predict a scaling curve</span></p>
-              <div class="definition__equation"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mi>g</mi><mo>(</mo><mi>D</mi><mo>,</mo><mi>H</mi><mo>,</mo><mi>B</mi><mo>)</mo><mo>=</mo><mo>(</mo><mi>A</mi><mo>,</mo><mi>b</mi><mo>,</mo><mi>E</mi><mo>)</mo></math></div>
-              <div class="definition__equation"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mi>L</mi><mo>(</mo><mi>C</mi><mo>)</mo><mo>=</mo><mi>A</mi><msup><mi>C</mi><mrow><mo>−</mo><mi>b</mi></mrow></msup><mo>+</mo><mi>E</mi></math></div>
+              <div class="definition__equation"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mi>g</mi><mo>(</mo><mi>D</mi><mo>,</mo><mi>H</mi><mo>,</mo><mi>C</mi><mo>)</mo><mo>=</mo><mo>(</mo><mi>A</mi><mo>,</mo><mi>α</mi><mo>,</mo><msub><mi>L</mi><mo>∞</mo></msub><mo>)</mo></math></div>
+              <div class="definition__equation"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mi>L</mi><mo>(</mo><mi>c</mi><mo>)</mo><mo>=</mo><mi>A</mi><msup><mi>c</mi><mrow><mo>−</mo><mi>α</mi></mrow></msup><mo>+</mo><msub><mi>L</mi><mo>∞</mo></msub></math></div>
               <dl class="definition__terms">
-                <div><dt><var>D</var></dt><dd>Shared data recipe, with fixed tokens per parameter (TPP).</dd></div>
-                <div><dt><var>H</var></dt><dd>Model family, with constraints such as fixed sparsity and aspect ratio.</dd></div>
-                <div><dt><var>B</var>, <var>C</var></dt><dd>B is the list of compute budgets in the ladder; C is any one budget.</dd></div>
+                <div><dt><var>D</var></dt><dd>Data configurations along the ladder, constrained to a shared recipe and fixed tokens per parameter (TPP).</dd></div>
+                <div><dt><var>H</var></dt><dd>Architecture configurations from one model family, constrained by rules such as fixed sparsity and aspect ratio.</dd></div>
+                <div><dt><var>C</var></dt><dd>The list of compute budgets (c₁, c₂, …) along the ladder. Each rung pairs one d, h, and c from D, H, and C.</dd></div>
                 <div><dt><var>g</var></dt><dd>Your mental predictor of the three numbers that describe the curve.</dd></div>
-                <div><dt><var>A</var>, <var>b</var>, <var>E</var></dt><dd>Curve scale, rate of improvement, and loss floor, respectively.</dd></div>
-                <div><dt><var>L</var>(<var>C</var>)</dt><dd>Model loss at compute budget C.</dd></div>
+                <div><dt><var>A</var>, <var>α</var>, <var>L</var><sub>∞</sub></dt><dd>Curve scale, scaling exponent, and loss floor, respectively.</dd></div>
+                <div><dt><var>L</var>(<var>c</var>)</dt><dd>Model loss at a single compute budget c.</dd></div>
               </dl>
             </div>
-            <p>Here, both the input and prediction target change. Instead of the free-form data config, the scaling ladder enforces a fixed TPP budget; on the arch config side, it should also follow constraints like fixed sparsity, fixed aspect ratio, etc. The prediction target, on the contrary, is reduced from O(N) scaling data points to 3 variables — <var>A</var>, <var>b</var>, and <var>E</var>. This design augments the training data by strengthening correlations between data points, while reducing the complexity of the prediction. Too good. I can’t imagine what my panda would be like if he were trained with this kind of training data.</p>
+            <p>Here, both the input and prediction target change. Instead of the free-form data config, the scaling ladder enforces a fixed TPP budget; on the arch config side, it should also follow constraints like fixed sparsity, fixed aspect ratio, etc. The prediction target, on the contrary, is reduced from O(N) scaling data points to 3 variables — <var>A</var>, <var>α</var>, and <var>L</var><sub>∞</sub>. This design augments the training data by strengthening correlations between data points, while reducing the complexity of the prediction. Too good. I can’t imagine what my panda would be like if he were trained with this kind of training data.</p>
           </section>
           <section id="bitter-lessons" class="section" data-nav="Bitter lessons">
             <h2>Bitter lessons to actually run a scaling ladder exp</h2>
@@ -138,15 +138,26 @@
           </section>
           <section id="checklist" class="section" data-nav="Checklist">
             <h2>Checklist before asking for chips</h2>
-            <h3 id="project-value">should you keep working on this project?</h3>
-            <p>Let's propose a metric: cost-effective research score = impact / ( <span class="math">λ<sub>ice</sub></span> * gpu hrs) where the gpu hrs is those experiments actually kept in main paper In academia; <span class="math">λ<sub>ice</sub></span> * gpu hrs denote the total gpu hrs including those dropped or hidden by yourself. your goal should be optimizing this metric instead of optimizing impact alone overlooking the burnt gpu hrs. There are some references：</p>
-            <p>ResNet</p>
-            <p>Transformers</p>
-            <h3 id="smallest-experiment">What's your smallest exp gpu hr requirement?</h3>
-            <p>Say your group has # of gpu K, with m active users, your fair share would be K/m.</p>
-            <p>A reasonable smallest exp would be ≤ K/m × 1/4 running for within one day to allow you for enough sweeping. You then should follow a strict promotion rule i.e. escalate part of your successful exps to 1/2 K/m gpus → K/m gpus → asking more from your advisor to use more than fair share → asking me or Yi for temporary more quota.</p>
-            <h3 id="current-mfu">what's your current mfu number?</h3>
-            <p>Is your bottleneck really the # GPU or something else like what section 2 mentions?</p>
+            <h3 id="project-value">Should you keep working on this project?</h3>
+            <p>Let’s propose a metric:</p>
+            <div class="definition" aria-labelledby="research-score">
+              <p class="definition__title" id="research-score">Definition <span>Cost-effective research score</span></p>
+              <div class="definition__equation"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mtext>score</mtext><mo>=</mo><mfrac><mtext>impact</mtext><mrow><msub><mi>λ</mi><mtext>ice</mtext></msub><mo>×</mo><mtext>GPU hrs</mtext></mrow></mfrac></math></div>
+              <p>GPU hrs counts only the experiments actually kept in the main paper, and <span class="math">λ<sub>ice</sub> ≥ 1</span> is your iceberg multiplier — the ratio of total GPU hrs (including all the runs you dropped or hid) to the ones in the paper.</p>
+            </div>
+            <p>Your goal should be optimizing this metric instead of optimizing impact alone while overlooking the burnt GPU hrs. Some references for what high scores look like:</p>
+            <ul>
+              <li><a href="https://arxiv.org/abs/1512.03385">ResNet — <em>Deep Residual Learning for Image Recognition</em> (He et al., 2016)</a>. The paper studies residual learning on small CIFAR-10 models as well as ImageNet; its 152-layer network has lower computational complexity than VGG-16/19.</li>
+              <li><a href="https://papers.neurips.cc/paper/7181-attention-is-all-you-need.pdf#page=7">Transformers — <em>Attention Is All You Need</em> (Vaswani et al., 2017)</a>. The reported base-model run used 8 P100 GPUs for 12 hours (96 GPU hrs); the big-model run used 8 P100s for 3.5 days (672 GPU hrs).</li>
+            </ul>
+            <p>These are qualitative examples, not computed scores: the reported runs do not tell us the full cost of all the discarded experiments.</p>
+            <h3 id="smallest-experiment">What’s your smallest exp GPU hr requirement?</h3>
+            <p>Say your group has <var>K</var> GPUs with <var>m</var> active users. Your fair share is <span class="math">K/m</span>. A reasonable smallest exp should take <span class="math">≤ K/m × 1/4</span> GPUs and finish within one day, leaving you room for enough sweeping. From there, follow a strict promotion rule: escalate part of your successful exps to <span class="math">1/2 × K/m</span> GPUs → <span class="math">K/m</span> GPUs → ask your advisor to use more than fair share → ask me or Yi for a temporary extra quota.</p>
+            <h3 id="current-mfu">What’s your current MFU number?</h3>
+            <p>Is your bottleneck really the number of GPUs, or something else like what section 2 mentions?</p>
+            <h3 id="baseline-ladder">Have you run some smaller data points and shown your ladder beats the baseline?</h3>
+            <h3 id="coordinate-jobs">Have you coordinated with group members to see if they have idle jobs that can be killed?</h3>
+            <p>Sorry for any possible offence. Hope you have a happy research journey.</p>
           </section>
         </article>
       </div>
