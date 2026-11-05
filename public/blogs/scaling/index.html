@@ -145,12 +145,12 @@
             <p>Let's propose a metric:</p>
             <div class="definition" aria-labelledby="research-score">
               <p class="definition__title" id="research-score">Definition 3</p>
-              <p>cost-effective research score = impact / (<span class="math">λ<sub>ice</sub> × GPU hrs</span>), where GPU hrs counts only the experiments actually kept in the main paper, and <span class="math">λ<sub>ice</sub> ≥ 1</span> is your iceberg multiplier — the ratio of total GPU hrs (including all the runs you dropped or hid) to the ones in the paper.</p>
+              <p>cost-effective research score = impact / (<span class="math">λ<sub>ice</sub> × GPU hrs</span>), where GPU hrs counts only the experiments actually kept in the main paper.</p>
             </div>
-            <p>Your goal should be optimizing this metric instead of optimizing impact alone while overlooking the burnt GPU hrs. For a rough compute-cost illustration, use the following H200-equivalent estimates for the experiments in the papers and assume <span class="math">λ<sub>ice</sub> = 100</span>:</p>
+            <p>Your goal should be optimizing this metric instead of optimizing impact alone while overlooking the burnt GPU hrs. For a rough compute-cost illustration, use the following H200-equivalent estimates for the experiments in the papers, assuming MFU below 20%:</p>
             <ul>
-              <li><strong>ResNet:</strong> 70 × 100 ≈ <strong>7,000 H200 GPU hrs</strong> in total.</li>
-              <li><strong>Transformer:</strong> 210 × 100 ≈ <strong>21,000 H200 GPU hrs</strong> in total.</li>
+              <li><strong>ResNet:</strong> <span class="math">λ<sub>ice</sub> × 210 = 100 × 210</span> ≈ <strong>21,000 H200 GPU hrs</strong> in total.</li>
+              <li><strong>Transformer:</strong> <span class="math">λ<sub>ice</sub> × 70 = 100 × 70</span> ≈ <strong>7,000 H200 GPU hrs</strong> in total.</li>
             </ul>
             <p>These are illustrative estimates, not measured totals for the original research projects.</p>
             <h3 id="smallest-experiment">What's your smallest exp GPU hr requirement?</h3>
