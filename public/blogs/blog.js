@@ -124,16 +124,31 @@
   const bubble = document.createElement("div");
   bubble.className = "hover-bubble";
   bubble.setAttribute("role", "tooltip");
+  bubble.id = "hover-note-tooltip";
   document.body.appendChild(bubble);
   const place = (e) => {
-    bubble.style.left = `${e.clientX}px`;
-    bubble.style.top = `${e.clientY}px`;
+    const halfWidth = bubble.getBoundingClientRect().width / 2;
+    const x = Math.max(halfWidth + 8, Math.min(e.clientX, window.innerWidth - halfWidth - 8));
+    const y = Math.max(e.clientY, bubble.getBoundingClientRect().height + 22);
+    bubble.style.left = `${x}px`;
+    bubble.style.top = `${y}px`;
   };
   document.querySelectorAll("[data-hover]").forEach((el) => {
     el.addEventListener("mouseenter", (e) => {
       bubble.textContent = el.dataset.hover ?? "";
       bubble.classList.add("is-visible");
       place(e);
+    });
+    el.setAttribute("aria-describedby", bubble.id);
+    el.addEventListener("focus", () => {
+      bubble.textContent = el.dataset.hover ?? "";
+      bubble.classList.add("is-visible");
+      const rect = el.getBoundingClientRect();
+      place({ clientX: rect.left + rect.width / 2, clientY: rect.top });
+    });
+    el.addEventListener("blur", () => bubble.classList.remove("is-visible"));
+    el.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") bubble.classList.remove("is-visible");
     });
     el.addEventListener("mousemove", place);
     el.addEventListener("mouseleave", () => bubble.classList.remove("is-visible"));
