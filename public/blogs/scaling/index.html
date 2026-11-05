@@ -42,7 +42,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="../blog.css" />
-    <link rel="stylesheet" href="./scaling.css?v=20261105-checklist" />
+    <link rel="stylesheet" href="./scaling.css?v=20261105-mfu-meme" />
   </head>
 
   <body>
@@ -133,6 +133,9 @@
             <p>Parallelism is scale-dependent. My exp logs documented the following fun stuff. In one 200M scale exp of Nestor, optimizer-state sharding made the optimizer update slower; while things flipped at 1B, where the sharding helped unlock a larger per-GPU microbatch. A general takeaway is, fancy sharding helps MFU on large models but for smaller ones, you have to tolerate the number and keep reading.</p>
             <p>Pay attention to the actual computation per step. GPUs generally run large, regular matrix multiplications more efficiently than many small ones. Splitting the same arithmetic into lots of tiny matmuls can underutilize the GPU and introduce launch bubbles between kernels. MoE and Nestor are two perfect examples here — let’s first forget about the load balancing issues, MoE slices the FFN matrices, and Nestor in addition slices the attention projections. This makes 3 equal-FLOPs models have an obvious MFU ranking: dense &gt; MoE &gt; Nestor, though advanced infra magic may help close the gap especially on larger scales. Beyond the compute itself, communication can bite you too. In an earlier multi-node run of Nestor, gradients were supposed to be synchronized only once per optimizer step. But after <code>torch.compile</code> wrapped the model, the helper function failed to recognize the DDP instance and silently skipped <code>no_sync</code>, so gradients were actually synchronized after every microbatch. Meanwhile, the network configuration funneled cross-node traffic through a single network port.</p>
             <p>All the above experiences came from communicating with agents. Though Claude may have way stronger infra skills than me, I need to nudge it forward if I find the MFU value suspicious or the decomposed actual computation suspicious.</p>
+            <figure class="mfu-meme">
+              <img src="./assets/mfu-b300-meme.png" alt="Manga meme: I couldn’t make Lord B300 go all out." width="1676" height="938" loading="lazy" />
+            </figure>
             <h3 id="bottlenecks">Bottleneck may not be chips' compute</h3>
             <p>Bottleneck may not be chips especially for vision / robot folks. it maybe data loading, simulator rendering, etc; for RL guys, it maybe the speed of inference engine, RL algorithms, distribution of # training enginers and # inference engines. My panda 信誓旦旦 spoke "I cant run my exps without 32 h200s cuz it would be too slow" but the actual hidden reason for slowing is not the number of chips - used to random shuffle every time for each data sample and face some filelock issues when reading video data.</p>
           </section>

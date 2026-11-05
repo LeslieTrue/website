@@ -231,3 +231,14 @@
     gap: 0.5rem;
   }
 }
+
+.mfu-meme {
+  width: 50%;
+  margin: 1.75rem auto 2rem;
+}
+
+.mfu-meme img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
