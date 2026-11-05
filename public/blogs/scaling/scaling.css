@@ -110,3 +110,30 @@
   width: 100%;
   cursor: zoom-in;
 }
+
+/* Highlight the learning objective's question and answer using the site accent. */
+.qa-block {
+  margin: 1.4rem 0;
+  padding: 1rem 1.15rem;
+  border: 1px solid var(--accent-mid);
+  border-left: 3px solid var(--accent);
+  border-radius: 10px;
+  background: var(--accent-soft);
+}
+
+.qa-block__row {
+  display: grid;
+  grid-template-columns: 1.25rem minmax(0, 1fr);
+  gap: 0.65rem;
+  margin: 0;
+}
+
+.qa-block__row + .qa-block__row {
+  margin-top: 0.55rem;
+}
+
+.qa-block__label,
+.qa-block__row strong {
+  color: var(--accent-ink);
+  font-weight: 600;
+}

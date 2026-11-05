@@ -92,8 +92,11 @@
             <p><strong>Definition 1:</strong></p>
             <p class="compute-equation"><span class="math math-wrap"><var>L</var>(data, arch config, compute) = model perf (1)</span></p>
             <p class="compute-equation"><span class="math math-wrap">min ‖<var>L</var>(data, arch config, compute) − actual perf‖<sub>2</sub><sup>2</sup> (2)</span></p>
-            <p>Your exp logs give you the input (data, arch config, compute) and the label (model perf) and your PhD career is minimizing the objective like equation 2. However, model perf alone is not that learnable (i.e. it may not have a distribution) while data, arch config (hparams) may have tons of combinations to try. How to make this learning process more efficient?</p>
-            <p>Use scaling ladder, or at least think of your exps with a sense of it.</p>
+            <p>Your exp logs give you the input (data, arch config, compute) and the label (model perf) and your PhD career is minimizing the objective like equation 2. However, model perf alone is not that learnable (i.e. it may not have a distribution) while data, arch config (hparams) may have tons of combinations to try.</p>
+            <div class="qa-block" role="note" aria-label="Question and answer">
+              <p class="qa-block__row"><span class="qa-block__label" aria-label="Question">Q</span><strong>How to make this learning process more efficient?</strong></p>
+              <p class="qa-block__row"><span class="qa-block__label" aria-label="Answer">A</span><span>Use scaling ladder, or at least think of your exps with a sense of it.</span></p>
+            </div>
             <p><strong>Definition 2:</strong></p>
             <p class="compute-equation"><span class="math math-wrap"><var>L</var>(data (fixed TPP), constrained arch config family, computes) = scaling curve</span></p>
             <p>Here, both the input and prediction target change. Instead of the free-form data config, the scaling ladder enforces a fixed TPP budget; on the arch config side, it should also follow constraints like fixed sparsity, fixed aspect ratio, etc. The prediction target, on the contrary, is reduced from O(N) scaling data points to 3 variables — A, alpha, and L. This design augments the training data by strengthening correlations between data points, while reducing the complexity of the prediction. Too good. I can’t imagine what my panda would be like if he were trained with this kind of training data.</p>
