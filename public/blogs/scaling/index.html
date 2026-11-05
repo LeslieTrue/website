@@ -42,7 +42,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="../blog.css" />
-    <link rel="stylesheet" href="./scaling.css?v=20261105-qa" />
+    <link rel="stylesheet" href="./scaling.css?v=20261105-definitions" />
   </head>
 
   <body>
@@ -61,6 +61,7 @@
           · Updated <time datetime="2026-11-05">November 5, 2026</time>
         </p>
         <h1 class="hero__title">Careful Scaling in Academia</h1>
+        <p class="hero__lede"><span class="hero__speaker" aria-label="panda">🐼</span>: “Tianzhe, don’t kill my job until it reaches SOTA.”</p>
         <p class="hero__byline"><a href="/">Tianzhe Chu</a></p>
       </header>
 
@@ -84,22 +85,41 @@
           <section id="science" class="section" data-nav="Science">
             <h2>Science part: what it is and why we want it</h2>
             <p>There are many interesting lectures or notes on what a scaling ladder is and you may find details there []. Here I just want to briefly mention it — given a set of at least 4 exp logs with different compute budgets and from the same model family, you fit a curve</p>
-            <p class="compute-equation"><span class="math math-wrap"><var>L</var> = <var>A</var> × <var>F</var><sup>−α</sup> + <var>L</var></span></p>
+            <div class="compute-equation"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mi>L</mi><mo>(</mo><mi>C</mi><mo>)</mo><mo>=</mo><mi>A</mi><msup><mi>C</mi><mrow><mo>−</mo><mi>α</mi></mrow></msup><mo>+</mo><msub><mi>L</mi><mo>∞</mo></msub></math></div>
             <p>This curve can help do two things — 1. predict the larger scale perf that you cannot afford (or verify their perf if you can); 2. compare two model families’ scaling ladders to see which actually works better. This style of comparison gives some 不烧心 (peace of mind) before burning chips, cuz the training compute of any arch can be calculated in theory (or sometimes plus a small run for MFU estimation if you want the actual wall time as the x axis).</p>
             <p>Inspired by Tatsu’s course at Stanford, I came up with another academia view on why we want it:</p>
             <h3 id="phd-training">Scaling ladder as a structured prediction objective for PhD training</h3>
             <p>Let’s now think of this from an inverse view — say, instead of you training neural networks, actually the training experiment logs are training your brain.</p>
-            <p><strong>Definition 1:</strong></p>
-            <p class="compute-equation"><span class="math math-wrap"><var>L</var>(data, arch config, compute) = model perf (1)</span></p>
-            <p class="compute-equation"><span class="math math-wrap">min ‖<var>L</var>(data, arch config, compute) − actual perf‖<sub>2</sub><sup>2</sup> (2)</span></p>
+            <div class="definition" aria-labelledby="definition-one">
+              <p class="definition__title" id="definition-one">Definition 1 <span>Predict one experiment</span></p>
+              <div class="definition__equation"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mover><mi>y</mi><mo>^</mo></mover><mo>=</mo><msub><mi>f</mi><mi>θ</mi></msub><mo>(</mo><mi>d</mi><mo>,</mo><mi>h</mi><mo>,</mo><mi>C</mi><mo>)</mo></math><span class="definition__number">(1)</span></div>
+              <div class="definition__equation"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><munder><mo>min</mo><mi>θ</mi></munder><msubsup><mrow><mo>‖</mo><msub><mi>f</mi><mi>θ</mi></msub><mo>(</mo><mi>d</mi><mo>,</mo><mi>h</mi><mo>,</mo><mi>C</mi><mo>)</mo><mo>−</mo><mi>y</mi><mo>‖</mo></mrow><mn>2</mn><mn>2</mn></msubsup></math><span class="definition__number">(2)</span></div>
+              <dl class="definition__terms">
+                <div><dt><var>d</var></dt><dd>Data configuration.</dd></div>
+                <div><dt><var>h</var></dt><dd>Architecture and hyperparameter configuration.</dd></div>
+                <div><dt><var>C</var></dt><dd>Training compute budget, measured in FLOPs.</dd></div>
+                <div><dt><var>ŷ</var>, <var>y</var></dt><dd>Predicted and measured model performance, respectively.</dd></div>
+                <div><dt><var>f</var><sub>θ</sub></dt><dd>Your mental predictor; θ represents what you learn from experiment logs.</dd></div>
+              </dl>
+            </div>
             <p>Your exp logs give you the input (data, arch config, compute) and the label (model perf) and your PhD career is minimizing the objective like equation 2. However, model perf alone is not that learnable (i.e. it may not have a distribution) while data, arch config (hparams) may have tons of combinations to try.</p>
             <div class="qa-block" role="note" aria-label="Question and answer">
               <p class="qa-block__row"><span class="qa-block__label" aria-label="Question">Q</span><strong>How to make this learning process more efficient?</strong></p>
               <p class="qa-block__row"><span class="qa-block__label" aria-label="Answer">A</span><span>Use scaling ladder, or at least think of your exps with a sense of it.</span></p>
             </div>
-            <p><strong>Definition 2:</strong></p>
-            <p class="compute-equation"><span class="math math-wrap"><var>L</var>(data (fixed TPP), constrained arch config family, computes) = scaling curve</span></p>
-            <p>Here, both the input and prediction target change. Instead of the free-form data config, the scaling ladder enforces a fixed TPP budget; on the arch config side, it should also follow constraints like fixed sparsity, fixed aspect ratio, etc. The prediction target, on the contrary, is reduced from O(N) scaling data points to 3 variables — A, alpha, and L. This design augments the training data by strengthening correlations between data points, while reducing the complexity of the prediction. Too good. I can’t imagine what my panda would be like if he were trained with this kind of training data.</p>
+            <div class="definition" aria-labelledby="definition-two">
+              <p class="definition__title" id="definition-two">Definition 2 <span>Predict a scaling curve</span></p>
+              <div class="definition__equation"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><msub><mi>g</mi><mi>θ</mi></msub><mo>(</mo><msub><mi>d</mi><mi>τ</mi></msub><mo>,</mo><mi>ℋ</mi><mo>,</mo><mi>𝒞</mi><mo>)</mo><mo>=</mo><mo>(</mo><mi>A</mi><mo>,</mo><mi>α</mi><mo>,</mo><msub><mi>L</mi><mo>∞</mo></msub><mo>)</mo></math></div>
+              <div class="definition__equation"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mi>L</mi><mo>(</mo><mi>C</mi><mo>)</mo><mo>=</mo><mi>A</mi><msup><mi>C</mi><mrow><mo>−</mo><mi>α</mi></mrow></msup><mo>+</mo><msub><mi>L</mi><mo>∞</mo></msub></math></div>
+              <dl class="definition__terms">
+                <div><dt><var>d</var><sub>τ</sub></dt><dd>A shared data recipe with fixed tokens per parameter, τ (TPP), across the ladder.</dd></div>
+                <div><dt>ℋ</dt><dd>A constrained architecture family, for example with fixed sparsity and aspect ratio.</dd></div>
+                <div><dt>𝒞</dt><dd>The set of training compute budgets along the ladder; C is one such budget.</dd></div>
+                <div><dt><var>g</var><sub>θ</sub></dt><dd>Your mental predictor of the whole scaling curve.</dd></div>
+                <div><dt><var>A</var>, <var>α</var>, <var>L</var><sub>∞</sub></dt><dd>The curve’s amplitude, scaling exponent, and asymptotic loss floor.</dd></div>
+              </dl>
+            </div>
+            <p>Here, both the input and prediction target change. Instead of the free-form data config, the scaling ladder enforces a fixed TPP budget; on the arch config side, it should also follow constraints like fixed sparsity, fixed aspect ratio, etc. The prediction target, on the contrary, is reduced from O(N) scaling data points to 3 variables — <var>A</var>, <var>α</var>, and <var>L</var><sub>∞</sub>. This design augments the training data by strengthening correlations between data points, while reducing the complexity of the prediction. Too good. I can’t imagine what my panda would be like if he were trained with this kind of training data.</p>
           </section>
           <section id="bitter-lessons" class="section" data-nav="Bitter lessons">
             <h2>Bitter lessons to actually run a scaling ladder exp</h2>

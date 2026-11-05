@@ -137,3 +137,97 @@
   color: var(--accent-ink);
   font-weight: 600;
 }
+
+/* Compact notation, with the symbol key kept beside each definition. */
+.definition {
+  margin: 1.5rem 0;
+  padding: clamp(1rem, 3vw, 1.5rem);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--bg-soft);
+}
+
+.definition__title {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.25rem 0.75rem;
+  color: var(--ink);
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.definition__title span {
+  color: var(--muted);
+  font-size: 0.8rem;
+  font-weight: 400;
+}
+
+.definition__equation {
+  position: relative;
+  margin: 1.3rem 0;
+  padding: 0.25rem 1.5rem;
+  color: var(--ink);
+  font-size: clamp(1.05rem, 3vw, 1.3rem);
+}
+
+.definition math,
+.compute-equation math {
+  font-family: "STIX Two Math", "Cambria Math", math;
+}
+
+.definition__number {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--muted);
+  font-size: 0.75rem;
+}
+
+.definition__terms {
+  margin: 1.25rem 0 0;
+  padding-top: 1rem;
+  border-top: 1px solid var(--line-2);
+  font-size: 0.85rem;
+  line-height: 1.6;
+}
+
+.definition__terms > div {
+  display: grid;
+  grid-template-columns: 5rem minmax(0, 1fr);
+  gap: 0.75rem;
+}
+
+.definition__terms > div + div {
+  margin-top: 0.5rem;
+}
+
+.definition__terms dt {
+  color: var(--ink);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1rem;
+}
+
+.definition__terms dd {
+  margin: 0;
+}
+
+@media (max-width: 480px) {
+  .definition__equation {
+    padding-inline: 0;
+  }
+
+  .definition__number {
+    position: static;
+    display: block;
+    margin-top: 0.4rem;
+    transform: none;
+    text-align: right;
+  }
+
+  .definition__terms > div {
+    grid-template-columns: 4.5rem minmax(0, 1fr);
+    gap: 0.5rem;
+  }
+}
