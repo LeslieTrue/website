@@ -464,3 +464,19 @@ html[lang="zh-CN"] .article h3 {
 .article-stats__like[aria-busy="true"] { opacity: .65; cursor: wait; }
 .article-stats__status { flex-basis: 100%; font-size: 12px; }
 .article-stats__status:empty { display: none; }
+
+/* Inline spoilers keep the original wording and wrap with each line of prose. */
+.panda-spoiler {
+  border-radius: 3px;
+  background-color: #d5d9df;
+  background-image:
+    repeating-conic-gradient(#b9c0ca 0% 25%, #d9dde3 0% 50%);
+  background-size: 8px 8px;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+  cursor: pointer;
+}
+.panda-spoiler > span { opacity: 0; user-select: none; }
+.panda-spoiler:focus-visible { outline: 2px solid #6c8ebf; outline-offset: 3px; }
+.panda-spoiler[aria-expanded="true"] { background: #edf2f8; }
+.panda-spoiler[aria-expanded="true"] > span { opacity: 1; user-select: text; }

@@ -44,7 +44,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="../blog.css" />
-    <link rel="stylesheet" href="./scaling.css?v=20261106-counters" />
+    <link rel="stylesheet" href="./scaling.css?v=20261106-spoilers" />
   </head>
 
   <body>
@@ -70,7 +70,7 @@
           <p class="hero__meta hero__meta--authorship">Human written · Opus 4.6 fixed grammar</p>
         </div>
         <h1 class="hero__title">Careful Scaling in Academia</h1>
-        <p class="hero__lede"><span class="hero__speaker" aria-label="panda">🐼</span>: “Tianzhe, don’t kill my job until it reaches SOTA.”</p>
+        <p class="hero__lede"><span class="hero__speaker" aria-label="panda">🐼</span>: <span class="panda-spoiler" role="button" tabindex="0" aria-expanded="false" aria-label="Click to reveal" title="Click to reveal"><span aria-hidden="true">“Tianzhe, don’t kill my job until it reaches SOTA.”</span></span></p>
         <p class="hero__byline"><a href="/">Tianzhe Chu</a></p>
         <div class="article-stats" data-article-stats hidden>
           <span class="article-stats__views"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></svg><span data-view-count>—</span> views</span>
@@ -134,7 +134,7 @@
                 <div><dt><var>L</var>(<var>c</var>)</dt><dd>Model loss at a single compute budget c.</dd></div>
               </dl>
             </div>
-            <p>Here, both the input and prediction target change. Instead of the free-form data config, the scaling ladder enforces a fixed TPP budget; on the arch config side, it should also follow constraints like fixed sparsity, fixed aspect ratio, etc. The prediction target, on the contrary, is reduced from O(N) scaling data points to 3 variables — <var>A</var>, <var>α</var>, and <var>L</var><sub>∞</sub>. This design augments the training data by strengthening correlations between data points, while reducing the complexity of the prediction. Too good. I can’t imagine what my panda would be like if he were trained with this kind of training data.</p>
+            <p>Here, both the input and prediction target change. Instead of the free-form data config, the scaling ladder enforces a fixed TPP budget; on the arch config side, it should also follow constraints like fixed sparsity, fixed aspect ratio, etc. The prediction target, on the contrary, is reduced from O(N) scaling data points to 3 variables — <var>A</var>, <var>α</var>, and <var>L</var><sub>∞</sub>. This design augments the training data by strengthening correlations between data points, while reducing the complexity of the prediction. Too good. <span class="panda-spoiler" role="button" tabindex="0" aria-expanded="false" aria-label="Click to reveal" title="Click to reveal"><span aria-hidden="true">I can’t imagine what my panda would be like if he were trained with this kind of training data.</span></span></p>
           </section>
           <section id="bitter-lessons" class="section" data-nav="Bitter lessons">
             <h2>Bitter lessons to actually run a scaling ladder exp</h2>
@@ -151,7 +151,7 @@
               <img src="./assets/mfu-b300-meme.png" alt="Manga meme: I couldn’t make Lord B300 go all out." width="1676" height="938" loading="lazy" />
             </figure>
             <h3 id="bottlenecks">Bottleneck may not be chips' compute</h3>
-            <p>Bottleneck may not be chips especially for vision / robot folks. it maybe data loading, simulator rendering, etc; for RL guys, it maybe the speed of inference engine, RL algorithms, distribution of # training enginers and # inference engines. My panda 信誓旦旦 spoke "I cant run my exps without 32 h200s cuz it would be too slow" but the actual hidden reason for slowing is not the number of chips - used to random shuffle every time for each data sample and face some filelock issues when reading video data.</p>
+            <p>Bottleneck may not be chips especially for vision / robot folks. it maybe data loading, simulator rendering, etc; for RL guys, it maybe the speed of inference engine, RL algorithms, distribution of # training enginers and # inference engines. <span class="panda-spoiler" role="button" tabindex="0" aria-expanded="false" aria-label="Click to reveal" title="Click to reveal"><span aria-hidden="true">My panda 信誓旦旦 spoke "I cant run my exps without 32 h200s cuz it would be too slow" but the actual hidden reason for slowing is not the number of chips - used to random shuffle every time for each data sample and face some filelock issues when reading video data.</span></span></p>
           </section>
           <section id="checklist" class="section" data-nav="Checklist" data-checklist>
             <h2>Checklist before asking for chips</h2>
@@ -211,5 +211,6 @@
     <script src="../blog.js?v=20261106-checkmarks" defer></script>
     <script src="./language-switch.js" defer></script>
     <script src="./engagement.js?v=20261106" defer></script>
+    <script src="./spoilers.js?v=20261106" defer></script>
   </body>
 </html>

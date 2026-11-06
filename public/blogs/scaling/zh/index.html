@@ -44,7 +44,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="../../blog.css" />
-    <link rel="stylesheet" href="../scaling.css?v=20261106-counters" />
+    <link rel="stylesheet" href="../scaling.css?v=20261106-spoilers" />
   </head>
 
   <body>
@@ -70,7 +70,7 @@
           <p class="hero__meta hero__meta--authorship">Human written · Opus 4.6 fixed grammar</p>
         </div>
         <h1 class="hero__title">Careful Scaling in Academia</h1>
-        <p class="hero__lede"><span class="hero__speaker" aria-label="panda">🐼</span>: “Tianzhe, don’t kill my job until it reaches SOTA.”</p>
+        <p class="hero__lede"><span class="hero__speaker" aria-label="panda">🐼</span>: <span class="panda-spoiler" role="button" tabindex="0" aria-expanded="false" aria-label="点击查看原文" title="点击查看原文"><span aria-hidden="true">“Tianzhe, don’t kill my job until it reaches SOTA.”</span></span></p>
         <p class="hero__byline"><a href="/">Tianzhe Chu</a></p>
         <div class="article-stats" data-article-stats hidden>
           <span class="article-stats__views"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></svg><span data-view-count>—</span> 次浏览</span>
@@ -135,7 +135,7 @@
                 <div><dt><var>L</var>(<var>c</var>)</dt><dd>Model loss at a single compute budget c.</dd></div>
               </dl>
             </div>
-            <p>这里，输入和预测目标都变了。我们改用了一种更加有结构、有约束的输入：scaling ladder要求固定的token per parameters（TPP）预算；在模型结构配置上，我们至少也要固定稀疏度、深度/宽度比，等等。在预测目标是，我们把一个O（n）复杂度的数据点预测 变成了3个变量的预测。这种设计其实可以看作是数据增强手段：我们不光增强了数据点之间的相关性，我们还减小了预测目标的噪声和复杂度。这太好了。我不敢想我的熊猫要是早点学会这个该变得多厉害。</p>
+            <p>这里，输入和预测目标都变了。我们改用了一种更加有结构、有约束的输入：scaling ladder要求固定的token per parameters（TPP）预算；在模型结构配置上，我们至少也要固定稀疏度、深度/宽度比，等等。在预测目标是，我们把一个O（n）复杂度的数据点预测 变成了3个变量的预测。这种设计其实可以看作是数据增强手段：我们不光增强了数据点之间的相关性，我们还减小了预测目标的噪声和复杂度。这太好了。<span class="panda-spoiler" role="button" tabindex="0" aria-expanded="false" aria-label="点击查看原文" title="点击查看原文"><span aria-hidden="true">我不敢想我的熊猫要是早点学会这个该变得多厉害。</span></span></p>
           </section>
           <section id="bitter-lessons" class="section" data-nav="经验教训">
             <h2>经验教训</h2>
@@ -152,7 +152,7 @@
               <img src="../assets/mfu-b300-meme-zh.png" alt="没能让b300大人使出全力" width="1676" height="938" loading="lazy" />
             </figure>
             <h3 id="bottlenecks">瓶颈不一定是芯片</h3>
-            <p>瓶颈可能压根不在芯片身上，尤其是做视觉或机器人的同学，可能是数据加载、模拟器渲染等等；做 RL 的同学可能是推理引擎的速度、RL 算法本身、训练引擎和推理引擎数量的分配。我家熊猫信誓旦旦地跟我说“我不用 32 张 H200 跑不了我的实验，因为会太慢”，但实际变慢的原因并不是卡不够——而是每次都对数据样本随机打乱，读视频数据的时候还遇到了文件锁问题。说到底，找我要卡之前，先确认一下你的瓶颈真的是算力吗。</p>
+            <p>瓶颈可能压根不在芯片身上，尤其是做视觉或机器人的同学，可能是数据加载、模拟器渲染等等；做 RL 的同学可能是推理引擎的速度、RL 算法本身、训练引擎和推理引擎数量的分配。<span class="panda-spoiler" role="button" tabindex="0" aria-expanded="false" aria-label="点击查看原文" title="点击查看原文"><span aria-hidden="true">我家熊猫信誓旦旦地跟我说“我不用 32 张 H200 跑不了我的实验，因为会太慢”，但实际变慢的原因并不是卡不够——而是每次都对数据样本随机打乱，读视频数据的时候还遇到了文件锁问题。</span></span>说到底，找我要卡之前，先确认一下你的瓶颈真的是算力吗。</p>
           </section>
           <section id="checklist" class="section" data-nav="检查清单" data-checklist>
             <h2>找老师要 GPU 之前的检查清单</h2>
@@ -212,5 +212,6 @@
     <script src="../../blog.js?v=20261106-checkmarks" defer></script>
     <script src="../language-switch.js" defer></script>
     <script src="../engagement.js?v=20261106" defer></script>
+    <script src="../spoilers.js?v=20261106" defer></script>
   </body>
 </html>
