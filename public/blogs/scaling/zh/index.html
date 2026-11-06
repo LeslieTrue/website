@@ -162,7 +162,7 @@
               <li><strong>ResNet:</strong> <span class="math">λ<sub>ice</sub> × 210</span> H200 GPU 小时</li>
               <li><strong>Transformer:</strong> <span class="math">λ<sub>ice</sub> × 70</span> H200 GPU 小时</li>
             </ul>
-            <p>这些只是粗估，不是原始项目的实测总量。</p>
+            <p>（粗估）。更不必说大伙的project大概率影响力也小于这俩。</p>
             <h3 id="smallest-experiment">你最小的实验需要多少 GPU 时间？</h3>
             <p>假设你组有 K 张 GPU，m 个活跃用户。你分到的配额就是 K/m。一个合理的最小实验应该用不超过 K/m × 1/4 的卡，一天之内跑完，给你留出足够的调参空间。然后遵循严格的升级规则：把成功的实验升级到 1/2 × K/m 卡 → K/m 卡 → 找导师要超配 → 找我或者 Yi 老师申请临时额外配额。</p>
             <h3 id="current-mfu">你现在的 MFU 是多少？</h3>
