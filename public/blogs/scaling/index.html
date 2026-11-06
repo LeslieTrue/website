@@ -11,6 +11,8 @@
     />
     <link rel="canonical" href="https://tianzhechu.com/blogs/scaling/" />
 
+    <link rel="alternate" hreflang="en" href="https://tianzhechu.com/blogs/scaling/" />
+    <link rel="alternate" hreflang="zh-CN" href="https://tianzhechu.com/blogs/scaling/zh.html" />
     <!-- Open Graph / Twitter -->
     <meta property="og:type" content="article" />
     <meta property="og:url" content="https://tianzhechu.com/blogs/scaling/" />
@@ -42,7 +44,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="../blog.css" />
-    <link rel="stylesheet" href="./scaling.css?v=20261106-authorship" />
+    <link rel="stylesheet" href="./scaling.css?v=20261106-bilingual" />
   </head>
 
   <body>
@@ -52,6 +54,10 @@
         <a href="/">Home</a>
         <!-- links to the sections marked data-nav are appended here by the shared blog script -->
       </div>
+      <nav class="language-switch" aria-label="Language / 语言">
+        <a href="./" lang="en" hreflang="en" data-language-link aria-current="page">English</a>
+        <a href="./zh.html" lang="zh-CN" hreflang="zh-CN" data-language-link>中文</a>
+      </nav>
     </nav>
 
     <main id="top">
@@ -192,5 +198,6 @@
     </footer>
 
     <script src="../blog.js?v=20261106-checkmarks" defer></script>
+    <script src="./language-switch.js" defer></script>
   </body>
 </html>

@@ -300,3 +300,74 @@
   background: #fff0df;
   color: #a64b12;
 }
+
+.language-switch {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  padding: 3px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: #fff;
+  font-size: 0.78rem;
+  white-space: nowrap;
+}
+
+.language-switch a {
+  padding: 0.25rem 0.65rem;
+  border-radius: 999px;
+  color: var(--muted);
+  text-decoration: none;
+}
+
+.language-switch a[aria-current="page"] {
+  background: var(--accent-soft);
+  color: var(--accent-ink);
+  font-weight: 600;
+}
+
+.language-switch a:focus-visible {
+  outline: 2px solid var(--accent-ink);
+  outline-offset: 2px;
+}
+
+html[lang="zh-CN"] .article {
+  line-height: 1.9;
+  overflow-wrap: break-word;
+}
+
+html[lang="zh-CN"] .article h2,
+html[lang="zh-CN"] .article h3 {
+  line-height: 1.5;
+}
+
+.research-score-equation {
+  overflow-x: auto;
+}
+
+@media (max-width: 600px) {
+  html {
+    scroll-padding-top: 110px;
+  }
+
+  .topnav {
+    height: auto;
+    min-height: 56px;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    padding-block: 0.5rem;
+  }
+
+  .topnav__links {
+    order: 3;
+    width: 100%;
+  }
+
+  .language-switch {
+    margin-left: auto;
+  }
+
+  .research-score-equation math {
+    font-size: 0.85rem;
+  }
+}
