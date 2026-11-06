@@ -433,3 +433,34 @@ html[lang="zh-CN"] .article h3 {
   font-size: 0.8rem;
   font-weight: 500;
 }
+
+.article-stats {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px 20px;
+  margin-top: 20px;
+  color: #62758c;
+  font-size: 13px;
+  font-variant-numeric: tabular-nums;
+}
+.article-stats[hidden] { display: none; }
+.article-stats__views, .article-stats__like { display: inline-flex; align-items: center; gap: 7px; }
+.article-stats__like {
+  padding: 8px 13px;
+  border: 1px solid #d4e3f2;
+  border-radius: 999px;
+  background: #f0f6fc;
+  color: #527bad;
+  font: inherit;
+  cursor: pointer;
+  transition: background .15s, border-color .15s;
+}
+.article-stats__like:hover:not(:disabled) { background: #e2eefb; border-color: #91b2d7; }
+.article-stats__like:focus-visible { outline: 2px solid #6c8ebf; outline-offset: 3px; }
+.article-stats__like[aria-pressed="true"] { background: #e6effa; cursor: default; }
+.article-stats__like[aria-pressed="true"] svg { fill: currentColor; }
+.article-stats__like[aria-busy="true"] { opacity: .65; cursor: wait; }
+.article-stats__status { flex-basis: 100%; font-size: 12px; }
+.article-stats__status:empty { display: none; }
