@@ -32,12 +32,21 @@ export const profile = {
     { label: "Github", href: "https://github.com/LeslieTrue" },
     { label: "Twitter", href: "https://www.twitter.com/TianzheC" },
     { label: "Photos", href: "https://tianzhechu.notion.site/photos" },
+    { label: "Blog", href: "/blogs/" },
   ] satisfies Link[],
 };
 
 export const researchHtml = `My research interests broadly lie in discovering scientific clues for foundation models: how data, architectures, and training methods shape their behavior. I probe these questions across mathematical reasoning, new knowledge acquisition, vision and robotics.`;
 
 export const news: NewsItem[] = [
+  {
+    date: "Nov 2026",
+    html: `<a href="/blogs/scaling/">New blog online!</a>`,
+  },
+  {
+    date: "Nov 2026",
+    html: `New paper online: <a href="https://arxiv.org/abs/2610.31818">Nestor</a>.`,
+  },
   {
     date: "Aug 2026",
     html: `Starting my first internship at <a href="https://amilabs.xyz/">AMI</a>.`,
